@@ -8,7 +8,4 @@ public class LlistaAccessos {
     public LlistaAccessos(){
 
     }
-
-
-
 }
