@@ -38,7 +38,13 @@ public class LlistaAllotjaments {
 
         // s'ha de fer
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
+    /*
+    El mètode llistarAllotjaments de la classe LlistaAllotjaments rep un String estat que podrà ser "Operatiu", "No Operatiu" i "Tots".
+    Aquesta informació s'ha de traslladar a un boolean estatBoolean per tal que al recòrrer la llista d'Allotjaments es pugui saber quins s'han de seleccionar per concatenar la seva informació al String de return.
+    Podeu fer servir una condició com:
 
+    if(allotjament.isOperatiu()==estatB || estat.equals("Tots")) {...}
+     */
     }
 
     public boolean containsAllotjamentOperatiu() {
