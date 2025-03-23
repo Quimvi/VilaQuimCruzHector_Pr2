@@ -1,12 +1,12 @@
 package prog2.model;
 
-public class MobileHome extends Casa{
+public class MobilHome extends Casa{
     // Atribut
     private boolean terrassaBarbacoa;
 
     // Constructor
-    public MobileHome(String nom_, String idAllotjament_, String mida,int habitacions, int placesPersones,boolean terrassaBarbacoa){
-        super(nom_, idAllotjament_, 3,5, mida,habitacions,placesPersones);
+    public MobilHome(String nom_, String idAllotjament_,boolean estatAllotjament,String estatIluminacio, float mida, int habitacions, int placesPersones, boolean terrassaBarbacoa){
+        super(nom_, idAllotjament_,estatAllotjament,estatIluminacio, 3,5, mida,habitacions,placesPersones);
         setTerrassaBarbacoa(terrassaBarbacoa);
     }
 

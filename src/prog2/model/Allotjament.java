@@ -6,14 +6,16 @@ public class Allotjament implements InAllotjament{
     protected String nom_;
     protected String idAllotjament;
     protected boolean estatAllotjament;
-    protected String electricitat;
+    protected String estatIluminacio;
     protected long estadaMinimaALTA_;
     protected long estadaMinimaBAIXA_;
 
     // Constructor
-    public Allotjament(String nom_, String idAllotjament,long estadaMinimaALTA_,long estadaMinimaBAIXA_){
+    public Allotjament(String nom_, String idAllotjament,boolean estatAllotjament,String estatIluminacio,long estadaMinimaALTA_,long estadaMinimaBAIXA_){
         setNom(nom_);
         setId(idAllotjament);
+        setEstatAllotjament(estatAllotjament);
+        setElectricitat(estatIluminacio);
         setEstadaMinima(estadaMinimaALTA_, estadaMinimaBAIXA_);
         obrirAllotjament();
 
@@ -36,11 +38,11 @@ public class Allotjament implements InAllotjament{
     }
 
     public String getElectricitat(){
-        return this.electricitat;
+        return this.estatIluminacio;
     }
 
-    public void setElectricitat(String electricitat){
-        this.electricitat = electricitat;
+    public void setElectricitat(String estatIluminacio){
+        this.estatIluminacio = estatIluminacio;
     }
 
     public boolean getEstatAllotjament(){
@@ -87,8 +89,9 @@ public class Allotjament implements InAllotjament{
     }
 
     // String amb tota la informació de l'allotjament
+
     public String toString() {
-        return "Nom=" + this.nom_ + ", Id=" + this.idAllotjament + ", estada mínima en temp ALTA: " + this.estadaMinimaALTA_
-                + ", estada mínima en temp BAIXA: " + this.estadaMinimaBAIXA_ + ".";
+        return "Nom=" + this.nom_ + ", Id=" + this.idAllotjament + " estat allotjament: " + getEstatAllotjament() + " estat electric: " + getElectricitat() + ", estada mínima en temp ALTA: " + this.estadaMinimaALTA_
+                + ", estada mínima en temp BAIXA: " + this.estadaMinimaBAIXA_ + ". \n";
     }
 }

@@ -5,10 +5,12 @@ package prog2.vista;
  * @author lauraigual
  */
 public class IniciadorCamping {
-    
+    //Inicialitzo dades camping
+    /*
+
     /**
      * @param args the command line arguments
-     */
+
         public static void main(String[] args) {
         // Definim el nom del càmping
         String nomCamping = "Green";
@@ -19,4 +21,6 @@ public class IniciadorCamping {
         // Inicialitzem l'execució de la vista
         vistaCamping.gestioCamping();
     }
+
+     */
 }

@@ -2,13 +2,13 @@ package prog2.model;
 
 public class Casa extends Allotjament{
     // Atributs
-    protected String mida;
+    protected float mida;
     protected int habitacions;
     protected int placesPersones;
 
     // Constructor
-    public Casa(String nom_,String idAllotjament,long estadaMinimaALTA_,long estadaMinimaBAIXA_,String mida, int habitacions,int placesPersones){
-        super(nom_,idAllotjament,estadaMinimaALTA_,estadaMinimaBAIXA_);
+    public Casa(String nom_,String idAllotjament,boolean estatAllotjament,String estatIluminacio,long estadaMinimaALTA_,long estadaMinimaBAIXA_,float mida, int habitacions,int placesPersones){
+        super(nom_,idAllotjament,estatAllotjament,estatIluminacio,estadaMinimaALTA_,estadaMinimaBAIXA_);
         setMida(mida);
         setHabitacions(habitacions);
         setPlacesPersones(placesPersones);
@@ -31,11 +31,11 @@ public class Casa extends Allotjament{
         return this.placesPersones;
     }
 
-    public String getMida() {
+    public float getMida() {
         return this.mida;
     }
 
-    public void setMida(String mida) {
+    public void setMida(float mida) {
         this.mida = mida;
     }
 

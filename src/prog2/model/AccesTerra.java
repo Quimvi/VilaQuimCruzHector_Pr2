@@ -1,34 +1,25 @@
 package prog2.model;
 
-public class AccesTerra extends Acces{
-    protected int metresQuadratsTerra;
-    protected int longitudTerra;
+public abstract class AccesTerra extends Acces{
+    protected float longitud;
 
-    public AccesTerra(String nom, boolean acces, boolean accessibilitat, int metresQuadrats, int longitud){
-        super(nom, acces, accessibilitat);
-        setMetresQuadrats(metresQuadrats);
+    public AccesTerra(String nom, boolean accessibilitat, boolean estat, float longitud){
+        super(nom, accessibilitat,estat);
         setLongitud(longitud);
     }
+    public abstract boolean isAccessibilitat();
 
-    public int getLongitud() {
-        return this.longitudTerra;
+    public float getLongitud() {
+        return this.longitud;
     }
 
-    public int getMetresQuadrats() {
-        return metresQuadratsTerra;
-    }
-
-    public void setLongitud(int longitudTerra) {
-        this.longitudTerra = longitudTerra;
-    }
-
-    public void setMetresQuadrats(int metresQuadratsTerra) {
-        this.metresQuadratsTerra = metresQuadratsTerra;
+    public void setLongitud(float longitudTerra) {
+        this.longitud = longitudTerra;
     }
 
     //acabar soc un bago
     public String toString(){
-        return super.toString() //+ ja ho fare;
+        return super.toString() + " longitud: " + getLongitud();//+ ja ho fare;
     }
 }
 

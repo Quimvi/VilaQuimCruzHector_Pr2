@@ -2,14 +2,14 @@ package prog2.model;
 
 public class Parcela extends Allotjament{
     // Atributs
-    private float metres;
+    private float mida;
     private boolean connexioElectrica;
 
     // Constructor
-    public Parcela(String nom_,String idAllotjament, float metres,boolean connexioElectrica){
-        super(nom_,idAllotjament,2,4);
+    public Parcela(String nom_,String idAllotjament, boolean estatAllotjament,String estatIluminacio, float mida,boolean connexioElectrica){
+        super(nom_,idAllotjament,estatAllotjament,estatIluminacio,2,4);
         setConnexioElectrica(connexioElectrica);
-        setMida(metres);
+        setMida(mida);
     }
 
     // Funcionament correcte si connexioElectrica = true
@@ -20,11 +20,11 @@ public class Parcela extends Allotjament{
 
     // Getters & Setters
     public float getMida() {
-        return this.metres;
+        return this.mida;
     }
 
     public void setMida(float metres) {
-        this.metres = metres;
+        this.mida = metres;
     }
 
     public void setConnexioElectrica(boolean connexioElectrica) {

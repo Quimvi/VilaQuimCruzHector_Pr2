@@ -4,18 +4,20 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 
-public class Acces {
+public abstract class Acces implements InAcces{
+
     protected String nom;
-    protected boolean acces;
     protected boolean accessibilitat; // true cotxe i caminant, false caminant
-    protected ArrayList<Allotjament> llistaAllotjament;
+    protected boolean estat;
+    protected LlistaAllotjaments llistaAllotjament;
 
 
-    public Acces(String nom, boolean acces, boolean accessibilitat){
+    public Acces(String nom, boolean accessibilitat, boolean estat){
         setNom(nom);
-        obrirAcces();
         setAccessibilitat(accessibilitat);
-        this.llistaAllotjament = new ArrayList<Allotjament>();
+        setEstat(estat);
+
+
     }
 
     public void setNom(String nom) {
@@ -26,39 +28,48 @@ public class Acces {
         return this.nom;
     }
 
-    public ArrayList<Allotjament> getLlistaAllotjament() {
+    public LlistaAllotjaments getLlistaAllotjament() {
         return llistaAllotjament;
     }
 
-    public void setLlistaAllotjament (ArrayList<Allotjament> llistaAllotjament){
+    public void setLlistaAllotjament (LlistaAllotjaments llistaAllotjament){
         this.llistaAllotjament = llistaAllotjament;
     }
+
 
     public void setAccessibilitat(boolean accessibilitat) {
         this.accessibilitat = accessibilitat;
     }
 
-    public void afegirAllotjament(Allotjament allotjament){
-        llistaAllotjament.add(allotjament);
-    }
-
-    public void tancarAcces(){
-        this.acces = false;
-    }
-
-    public boolean getAcces(){
-        return this.acces;
-    }
-    public void obrirAcces(){
-        this.acces = true;
-    }
-
-    public boolean isAccessibilitat(){
+    public boolean getAccessibilitat(){
         return this.accessibilitat;
     }
 
- // acabar
+    public void afegirAllotjament(Allotjament allotjament){
+        llistaAllotjament.afegirAllotjament(allotjament);
+    }
+
+    public void tancarAcces(){
+        setEstat(false);
+    }
+
+    public boolean getEstat(){
+        return this.estat;
+    }
+
+    public void setEstat(boolean estat) {
+        this.estat = estat;
+    }
+
+    public void obrirAcces(){
+        setEstat(true);
+    }
+
+    public abstract boolean isAccessibilitat();
+
+
+    // acabar
     public String toString() {
-        return ; // son un bago
+        return "acces: " + nom + " accessibilitat: " + getAccessibilitat() + " estat: " + getEstat(); // soc un bago
     }
 }

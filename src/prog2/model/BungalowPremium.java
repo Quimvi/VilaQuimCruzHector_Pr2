@@ -12,9 +12,9 @@ public class BungalowPremium extends Casa{
     private String codiWifi;
 
     // Constructor
-    public BungalowPremium(String nom_, String idAllotjament_, String mida,int habitacions, int placesPersones,
+    public BungalowPremium(String nom_, String idAllotjament_,boolean estatAllotjament,String estatIluminacio, float mida,int habitacions, int placesPersones,
                            int placesParquing, boolean terrassa,boolean tv,boolean aireFred, boolean serveisExtra,String codiWifi){
-        super(nom_,idAllotjament_,4,7,mida,habitacions,placesPersones);
+        super(nom_,idAllotjament_,estatAllotjament,estatIluminacio,4,7,mida,habitacions,placesPersones);
         setPlacesParquing(placesParquing);
         setTerrassa(terrassa);
         setTv(tv);

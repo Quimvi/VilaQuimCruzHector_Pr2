@@ -1,33 +1,25 @@
 package prog2.model;
 
-public class AccesAsfalt extends Acces{
-    protected int metresQuadratsAsfalt;
-    protected int longitudAsfalt;
+public abstract class AccesAsfalt extends Acces{
+    protected float m2;
 
-    public AccesAsfalt(String nom, boolean acces, boolean accessibilitat, int metresQuadrats, int longitud){
-        super(nom, acces, accessibilitat);
-        setMetresQuadrats(metresQuadrats);
-        setLongitud(longitud);
+    public AccesAsfalt(String nom, boolean accessibilitat, boolean estat, float m2){
+        super(nom, accessibilitat,estat);
+        setM2(m2);
+    }
+    public abstract boolean isAccessibilitat();
+
+    public float getM2() {
+        return this.m2;
     }
 
-    public int getLongitud() {
-        return this.longitudAsfalt;
-    }
-
-    public int getMetresQuadrats() {
-        return metresQuadratsAsfalt;
-    }
-
-    public void setLongitud(int longitudAsfalt) {
-        this.longitudAsfalt = longitudAsfalt;
-    }
-
-    public void setMetresQuadrats(int metresQuadratsAsfalt) {
-        this.metresQuadratsAsfalt = metresQuadratsAsfalt;
+    public void setM2(float m2) {
+        this.m2 = m2;
     }
 
     //acabar soc un bago
     public String toString(){
-        return super.toString() //+ ja ho fare;
+        return super.toString() + " metres cuadrats: " + getM2();
     }
 }
+
