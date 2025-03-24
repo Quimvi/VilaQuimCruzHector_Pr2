@@ -80,9 +80,15 @@ public class Allotjament implements InAllotjament{
         return temporada;
     }
 
-    public void tancarAllotjament(Incidencia in){}
+    public void tancarAllotjament(Incidencia in){
+        setEstatAllotjament(false);
+        setElectricitat(in.getIluminacioAllotjament());
+    }
 
-    public void obrirAllotjament(){}
+    public void obrirAllotjament(){
+        setEstatAllotjament(false);
+        setElectricitat("100%");
+    }
 
     public boolean correcteFuncionament(){
         return true;

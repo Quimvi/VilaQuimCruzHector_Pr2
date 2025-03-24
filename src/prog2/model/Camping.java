@@ -35,11 +35,13 @@ public class Camping implements InCamping{
 
 
     public String llistarIncidencies() throws ExcepcioCamping{
-
+        return llistaIncidencies.llistarIncidencies();
     }
 
     public void afegirIncidencia(int num, String tipus, String idAllotjament, String data) throws ExcepcioCamping{
-
+        Allotjament allotjament = llistaAllotjaments.getAllotjament(idAllotjament);
+        llistaIncidencies.afegirIncidencia(num,tipus,allotjament,data);
+        //fer la comprovacio del numero d'In
     }
 
     public void eliminarIncidencia(int num) throws ExcepcioCamping{
