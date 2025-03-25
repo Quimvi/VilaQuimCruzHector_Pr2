@@ -48,15 +48,16 @@ public class Camping implements InCamping{
     }
 
     public void eliminarIncidencia(int num) throws ExcepcioCamping{
-
+        Incidencia in = llistaIncidencies.getIncidencia(num);
+        llistaIncidencies.eliminarIncidencia(in);
     }
 
     public int calculaAccessosAccessibles(){
-
+        return llistaAccessos.calculaAccessosAccessibles();
     }
 
     public float calculaMetresQuadratsAsfalt(){
-
+        return llistaAccessos.calculaMetresQuadratsAsfalt();
     }
 
     public void save(String camiDesti) throws ExcepcioCamping{
