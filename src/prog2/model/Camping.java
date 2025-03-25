@@ -4,12 +4,21 @@ import prog2.vista.ExcepcioCamping;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 public class Camping implements InCamping{
     private String nomCamping;
-    private LlistaAllotjaments llistaAllotjaments;
-    private LlistaAccessos llistaAccessos;
-    private LlistaIncidencies llistaIncidencies;
+    private final LlistaAllotjaments llistaAllotjaments;
+    private final LlistaAccessos llistaAccessos;
+    private final LlistaIncidencies llistaIncidencies;
+
+    Camping(String nomCamping){
+        setNomCamping(nomCamping);
+        llistaAllotjaments = null;
+        llistaAccessos = null;
+        llistaIncidencies = null;
+    }
 
     void setNomCamping (String nomCamping){
         this.nomCamping = nomCamping;
@@ -60,11 +69,30 @@ public class Camping implements InCamping{
         return llistaAccessos.calculaMetresQuadratsAsfalt();
     }
 
-    public void save(String camiDesti) throws ExcepcioCamping{
+    public void save(String camiDesti) throws ExcepcioCamping {
         File fitxer = new File(camiDesti);
-        FileInputStream fin = new FileInputStream(fitxer);
+        FileOutputStream fos = null;
+
+        try {
+            fos = new FileOutputStream(fitxer);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(this);
+            // Gestión de excepciones
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
 
 
+        } finally {
+
+            try {
+                if (fos != null) {
+
+                    fos.close();
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     public static Camping load(String camiOrigen) throws ExcepcioCamping {
