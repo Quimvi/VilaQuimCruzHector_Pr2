@@ -39,7 +39,8 @@ public class LlistaIncidencies implements InLlistaIncidencies{
             Incidencia incidenciaLlist = itrIn.next();
             if (incidenciaLlist.getNumIncidencia() == in.getNumIncidencia()) {
                 trobat = true;
-                this.incidencies.remove(in);
+                incidenciaLlist.getAllotjament().obrirAllotjament();
+                this.incidencies.remove(incidenciaLlist);
             }
         }
         if (!trobat) {
