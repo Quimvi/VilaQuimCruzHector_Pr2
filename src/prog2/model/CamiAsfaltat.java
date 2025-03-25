@@ -2,10 +2,10 @@ package prog2.model;
 
 public class CamiAsfaltat extends AccesAsfalt {
 
-    public CamiAsfaltat(String nom, boolean estat, float metresCuadrats){
-        super(nom,false, estat,metresCuadrats);
+    public CamiAsfaltat(String nom, boolean estat, float metresQuadrats){
+        super(nom,false, estat, metresQuadrats, 0);
     }
-    // s'ha de fer
+
     @Override
     public boolean isAccessibilitat(){
         return false;
@@ -13,6 +13,6 @@ public class CamiAsfaltat extends AccesAsfalt {
 
     @Override
     public String toString() {
-        return super.toString() + "Camí asfaltat ";
+        return "Camí asfaltat => " + super.toString();
     }
 }

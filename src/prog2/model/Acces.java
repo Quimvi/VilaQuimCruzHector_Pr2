@@ -16,8 +16,6 @@ public abstract class Acces implements InAcces{
         setNom(nom);
         setAccessibilitat(accessibilitat);
         setEstat(estat);
-
-
     }
 
     public void setNom(String nom) {
@@ -35,7 +33,6 @@ public abstract class Acces implements InAcces{
     public void setLlistaAllotjament (LlistaAllotjaments llistaAllotjament){
         this.llistaAllotjament = llistaAllotjament;
     }
-
 
     public void setAccessibilitat(boolean accessibilitat) {
         this.accessibilitat = accessibilitat;
@@ -65,11 +62,7 @@ public abstract class Acces implements InAcces{
         setEstat(true);
     }
 
-    public abstract boolean isAccessibilitat();
-
-
-    // acabar
-    public String toString() {
-        return "acces: " + nom + " accessibilitat: " + getAccessibilitat() + " estat: " + getEstat(); // soc un bago
+    public boolean isAccessibilitat() {
+        return getAccessibilitat();
     }
 }

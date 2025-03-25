@@ -7,7 +7,7 @@ public class Incidencia {
     private TipusIncidencia tipusIncidencia;
 
 
-    public Incidencia(int numIncidencia,Allotjament allotjament,String data,TipusIncidencia tipusIncidencia ){
+    public Incidencia(int numIncidencia, Allotjament allotjament, String data, TipusIncidencia tipusIncidencia){
         setNumIncidencia(numIncidencia);
         setAllotjament(allotjament);
         setData(data);
@@ -45,9 +45,8 @@ public class Incidencia {
         this.tipusIncidencia = tipusIncidencia;
     }
 
-    // s'ha de fer
     public String toString(){
-
+        return "Nùmero d'incidència: " + getNumIncidencia() + ", Allotjament: " + getAllotjament() + ", Data: " + getData() + ", Tipus: " + getTipusIncidencia();
     }
 
     public String getIluminacioAllotjament() {
@@ -60,9 +59,7 @@ public class Incidencia {
         }
     }
 
-
-
-public static enum TipusIncidencia {
+    public static enum TipusIncidencia {
         Reparacio,
         Neteja,
         Tancament

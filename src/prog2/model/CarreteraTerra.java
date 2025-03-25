@@ -4,15 +4,16 @@ public class CarreteraTerra extends AccesTerra{
     private float amplada;
 
     public CarreteraTerra(String nom, boolean estat, float metresCuadrats, float amplada){
-        super(nom,true, estat,metresCuadrats);
+        super(nom,true, estat, metresCuadrats, amplada);
         setAmplada(amplada);
     }
+
     public float getAmplada() {
         return amplada;
     }
 
-    public void setAmplada(float pesMaxim) {
-        this.amplada = pesMaxim;
+    public void setAmplada(float amplada) {
+        this.amplada = amplada;
     }
 
     @Override
@@ -22,6 +23,6 @@ public class CarreteraTerra extends AccesTerra{
 
     @Override
     public String toString() {
-        return super.toString() + "Camí asfaltat ";
+        return "Camí asfaltat => " + super.toString();
     }
 }

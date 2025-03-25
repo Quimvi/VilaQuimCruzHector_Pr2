@@ -2,12 +2,13 @@ package prog2.model;
 
 public abstract class AccesAsfalt extends Acces{
     protected float m2;
+    protected float kg;
 
-    public AccesAsfalt(String nom, boolean accessibilitat, boolean estat, float m2){
-        super(nom, accessibilitat,estat);
+    public AccesAsfalt(String nom, boolean accessibilitat, boolean estat, float m2, float kg){
+        super(nom, accessibilitat, estat);
         setM2(m2);
+        setKg(kg);
     }
-    public abstract boolean isAccessibilitat();
 
     public float getM2() {
         return this.m2;
@@ -17,9 +18,19 @@ public abstract class AccesAsfalt extends Acces{
         this.m2 = m2;
     }
 
-    //acabar soc un bago
+    public float getKg() {
+        return this.kg;
+    }
+
+    public void setKg(float kg) {
+        this.kg = kg;
+    }
+
     public String toString(){
-        return super.toString() + " metres cuadrats: " + getM2();
+        if (isAccessibilitat())
+            return super.toString() + ", Metres quadrats: " + getM2() + ", Pes màxim: " + getKg();
+        else
+            return super.toString() + ", Metres quadrats: " + getM2();
     }
 }
 

@@ -1,5 +1,6 @@
 package prog2.model;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Allotjament implements InAllotjament{
     // Atributs
@@ -11,20 +12,20 @@ public class Allotjament implements InAllotjament{
     protected long estadaMinimaBAIXA_;
 
     // Constructor
-    public Allotjament(String nom_, String idAllotjament,boolean estatAllotjament,String estatIluminacio,long estadaMinimaALTA_,long estadaMinimaBAIXA_){
+    public Allotjament(String nom_, String idAllotjament, boolean estatAllotjament, String estatIluminacio, long estadaMinimaALTA_, long estadaMinimaBAIXA_){
         setNom(nom_);
         setId(idAllotjament);
         setEstatAllotjament(estatAllotjament);
         setElectricitat(estatIluminacio);
         setEstadaMinima(estadaMinimaALTA_, estadaMinimaBAIXA_);
         obrirAllotjament();
-
     }
 
     // Getters & Setters
     public String getNom() {
         return this.nom_;
     }
+
     public void setNom(String nom_) {
         this.nom_ = nom_;
     }
@@ -80,18 +81,26 @@ public class Allotjament implements InAllotjament{
         return temporada;
     }
 
-    public void tancarAllotjament(Incidencia in){}
-
-    public void obrirAllotjament(){}
-
-    public boolean correcteFuncionament(){
-        return true;
+    public void tancarAllotjament(Incidencia in) {
+        setEstatAllotjament(false);
+        if (Incidencia.TipusIncidencia.Reparacio == in.getTipusIncidencia()) {
+            estatIluminacio = "100%";
+        }
+        else if (Incidencia.TipusIncidencia.Neteja == in.getTipusIncidencia()) {
+            estatIluminacio = "50%";
+        }
+        else {
+            estatIluminacio = "0%";
+        }
     }
 
-    // String amb tota la informació de l'allotjament
+    public void obrirAllotjament() {
+        setEstatAllotjament(true);
+        estatIluminacio = "100%";
+    }
 
     public String toString() {
         return "Nom=" + this.nom_ + ", Id=" + this.idAllotjament + " estat allotjament: " + getEstatAllotjament() + " estat electric: " + getElectricitat() + ", estada mínima en temp ALTA: " + this.estadaMinimaALTA_
-                + ", estada mínima en temp BAIXA: " + this.estadaMinimaBAIXA_ + ". \n";
+                + ", estada mínima en temp BAIXA: " + this.estadaMinimaBAIXA_ + ".\n";
     }
 }
