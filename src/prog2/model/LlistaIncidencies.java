@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
 
-public class LlistaIncidencies {
+public class LlistaIncidencies implements InLlistaIncidencies{
     private ArrayList<Incidencia> incidencies;
 
     public LlistaIncidencies(){
@@ -20,13 +20,12 @@ public class LlistaIncidencies {
             Incidencia incidencia = new Incidencia(num,allotjament, data, tipusIncidencia);
 
             if (incidencia.getAllotjament().getEstatAllotjament()){
+                allotjament.tancarAllotjament(incidencia);
                 this.incidencies.add(incidencia);
             }else {
                 throw new ExcepcioCamping("L'allotjament :" + incidencia.getAllotjament().getNom() + " ja té una incidència");
-
             }
 
-            allotjament.tancarAllotjament(incidencia);
         }else{
             throw new ExcepcioCamping("Aquest tipus d'incidencia no existeix");
         }
@@ -34,23 +33,35 @@ public class LlistaIncidencies {
     }
 
     public void eliminarIncidencia(Incidencia in) throws ExcepcioCamping{
-
-        if (!in.getAllotjament().getEstatAllotjament()){
-            Iterator<Incidencia> itrInci = this.incidencies.iterator();
-            while (itrInci.hasNext()) {
-                Incidencia incidenciaLlist = itrInci.next();
-                if (incidenciaLlist.getNumIncidencia() == in.getNumIncidencia())
-                    this.incidencies.remove(incidenciaLlist);
+        Iterator<Incidencia> itrIn = this.incidencies.iterator();
+        boolean trobat = false;
+        while (itrIn.hasNext() && !trobat) {
+            Incidencia incidenciaLlist = itrIn.next();
+            if (incidenciaLlist.getNumIncidencia() == in.getNumIncidencia()) {
+                trobat = true;
+                this.incidencies.remove(in);
             }
-        }else {
-            throw new ExcepcioCamping("Aquesta incidència no existeix en incidencies");
         }
-
+        if (!trobat) {
+            throw new ExcepcioCamping("no es troba en la llista");
+        }
     }
 
     //s'ha de fer
     public String llistarIncidencies() throws ExcepcioCamping{
+        boolean hiha = false;
+        StringBuffer concatenacioInfo = new StringBuffer();
+        Iterator<Incidencia> itrIn = this.incidencies.iterator();
 
+        while (itrIn.hasNext()) {
+            hiha = true;
+            Incidencia incidenciaLlist = itrIn.next();
+            concatenacioInfo.append(incidenciaLlist.toString()); //mirar que funcioni correctament
+        }
+        if(!hiha){
+            throw new ExcepcioCamping("no hi han incidencies");
+        }
+        return concatenacioInfo.toString();
     }
 
     public Incidencia getIncidencia(int num) throws ExcepcioCamping {
