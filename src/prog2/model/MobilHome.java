@@ -10,10 +10,9 @@ public class MobilHome extends Casa{
         setTerrassaBarbacoa(terrassaBarbacoa);
     }
 
-    // Funcionament correcte si terrassaBarbacoa = true
     @Override
-    public boolean correcteFuncionament(){
-        return this.terrassaBarbacoa;
+    public boolean Operatiu() {
+        return super.Operatiu();
     }
 
     // Getters & Setters

@@ -14,6 +14,10 @@ public class Casa extends Allotjament{
         setPlacesPersones(placesPersones);
     }
 
+    public boolean Operatiu(){
+        return this.estatAllotjament;
+    }
+
     // Getters & Setters
     public int getHabitacions() {
         return this.habitacions;
@@ -43,6 +47,6 @@ public class Casa extends Allotjament{
     public String toString() {
         return "Nom = " + this.nom_ + ", Id = " + this.idAllotjament + ", Mida = " + this.mida + ", Habitacions = " + this.habitacions
                 + ", placesPersones = " + this.placesPersones + ", estada mínima en temp ALTA = " + this.estadaMinimaALTA_
-                + ", estada mínima en temp BAIXA = " + this.estadaMinimaBAIXA_;
+                + ", estada mínima en temp BAIXA = " + this.estadaMinimaBAIXA_ + ", Iluminació = " + this.estatIluminacio;
     }
 }

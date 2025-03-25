@@ -2,6 +2,9 @@ package prog2.model;
 
 import prog2.vista.ExcepcioCamping;
 
+import java.io.File;
+import java.io.FileInputStream;
+
 public class Camping implements InCamping{
     private String nomCamping;
     private LlistaAllotjaments llistaAllotjaments;
@@ -57,6 +60,9 @@ public class Camping implements InCamping{
     }
 
     public void save(String camiDesti) throws ExcepcioCamping{
+        File fitxer = new File(camiDesti);
+        FileInputStream fin = new FileInputStream(fitxer);
+
 
     }
 

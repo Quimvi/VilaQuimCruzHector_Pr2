@@ -1,7 +1,6 @@
 package prog2.model;
 
 import prog2.vista.ExcepcioCamping;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 

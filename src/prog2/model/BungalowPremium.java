@@ -23,10 +23,9 @@ public class BungalowPremium extends Casa{
         setCodiWifi(codiWifi);
     }
 
-    // Funcionament correcte si aireFred = true i si 8 <= codiWifi.lenght() <= 16
     @Override
-    public boolean correcteFuncionament(){
-        return this.aireFred && this.codiWifi.length() >= 8 && this.codiWifi.length() <= 16;
+    public boolean Operatiu() {
+        return super.Operatiu();
     }
 
     // Getters & Setters

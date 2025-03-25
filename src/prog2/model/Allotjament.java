@@ -83,6 +83,8 @@ public class Allotjament implements InAllotjament{
 
     public void tancarAllotjament(Incidencia in) {
         setEstatAllotjament(false);
+        estatIluminacio = in.getIluminacioAllotjament();
+        /*
         if (Incidencia.TipusIncidencia.Reparacio == in.getTipusIncidencia()) {
             estatIluminacio = "100%";
         }
@@ -92,6 +94,7 @@ public class Allotjament implements InAllotjament{
         else {
             estatIluminacio = "0%";
         }
+        */
     }
 
     public void obrirAllotjament() {

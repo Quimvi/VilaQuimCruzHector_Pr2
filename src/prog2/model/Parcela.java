@@ -12,10 +12,8 @@ public class Parcela extends Allotjament{
         setMida(mida);
     }
 
-    // Funcionament correcte si connexioElectrica = true
-    @Override
-    public boolean correcteFuncionament(){
-        return this.connexioElectrica;
+    public boolean Operatiu() {
+        return getEstatAllotjament();
     }
 
     // Getters & Setters

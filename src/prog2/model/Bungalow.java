@@ -18,10 +18,9 @@ public class Bungalow extends Casa{
         setAireFred(aireFred);
     }
 
-    // Funcionament correcte si aireFred = true
     @Override
-    public boolean correcteFuncionament(){
-        return this.aireFred;
+    public boolean Operatiu() {
+        return super.Operatiu();
     }
 
     // Getters & Setters

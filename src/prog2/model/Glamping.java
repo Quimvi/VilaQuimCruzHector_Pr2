@@ -12,10 +12,9 @@ public class Glamping extends Casa{
         setCasaMascota(casaMascota);
     }
 
-    // Funcionament correcte si casaMascota = true
     @Override
-    public boolean correcteFuncionament(){
-        return this.casaMascota;
+    public boolean Operatiu() {
+        return super.Operatiu();
     }
 
     // Getters & Setters
