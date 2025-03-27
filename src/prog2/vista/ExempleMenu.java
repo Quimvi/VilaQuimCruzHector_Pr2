@@ -44,7 +44,7 @@ public class ExempleMenu {
      */
     private void gestio(Scanner sc) {
 
-        // Creem l'objecte per al menú. Li passem com a primer parà metre el nom del menú
+        // Creem l'objecte per al menú. Li passem com a primer paràmetre el nom del menú
         Menu<OpcionsMenuPrincipal> menu=new Menu<OpcionsMenuPrincipal>("Menu Principal",OpcionsMenuPrincipal.values());
 
         // Assignem la descripció de les opcions
@@ -56,10 +56,10 @@ public class ExempleMenu {
             // Mostrem les opcions del menú
             menu.mostrarMenu();
 
-            // Demanem una opcio
+            // Demanem una opció
             opcio=menu.getOpcio(sc);
 
-            // Fem les accions necessÃ ries
+            // Fem les accions necessàries
             switch(opcio) {
                 case MENU_PRINCIPAL_OPCIO1:
                     // Mostrem un missatge indicant que s'ha triat aquesta opciÃ³

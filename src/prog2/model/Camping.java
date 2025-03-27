@@ -13,14 +13,14 @@ public class Camping implements InCamping{
     private final LlistaAccessos llistaAccessos;
     private final LlistaIncidencies llistaIncidencies;
 
-    Camping(String nomCamping){
+    public Camping(String nomCamping){
         setNomCamping(nomCamping);
         llistaAllotjaments = null;
         llistaAccessos = null;
         llistaIncidencies = null;
     }
 
-    void setNomCamping (String nomCamping){
+    public void setNomCamping (String nomCamping){
         this.nomCamping = nomCamping;
     }
 
@@ -53,7 +53,7 @@ public class Camping implements InCamping{
     public void afegirIncidencia(int num, String tipus, String idAllotjament, String data) throws ExcepcioCamping{
         Allotjament allotjament = llistaAllotjaments.getAllotjament(idAllotjament);
         llistaIncidencies.afegirIncidencia(num,tipus,allotjament,data);
-        //fer la comprovacio del numero d'In
+        //fer la comprovació del numero d'In
     }
 
     public void eliminarIncidencia(int num) throws ExcepcioCamping{

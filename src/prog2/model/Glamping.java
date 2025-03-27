@@ -38,6 +38,7 @@ public class Glamping extends Casa{
     public String toString() {
         return "Nom = " + this.nom_ + ", Id = " + this.idAllotjament + ", Mida = " + this.mida + ", Habitacions = " + this.habitacions
                 + ", placesPersones = " + this.placesPersones + ", Material = " + this.material + ", casaMascota = " + this.casaMascota
-                + ", estada mínima en temp ALTA = " + this.estadaMinimaALTA_ + ", estada mínima en temp BAIXA = " + this.estadaMinimaBAIXA_;
+                + ", estat allotjament: " + getEstatAllotjament() + ", estat electric: " + getElectricitat() +
+                ", estada mínima en temp ALTA = " + this.estadaMinimaALTA_ + ", estada mínima en temp BAIXA = " + this.estadaMinimaBAIXA_;
     }
 }

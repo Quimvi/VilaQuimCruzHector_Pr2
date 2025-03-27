@@ -17,7 +17,7 @@ public class LlistaIncidencies implements InLlistaIncidencies{
 
         if (Objects.equals(tipus, "Reparacio") || Objects.equals(tipus, "Neteja") || Objects.equals(tipus, "Tancament")) {
             Incidencia.TipusIncidencia tipusIncidencia = Incidencia.TipusIncidencia.valueOf(tipus);
-            Incidencia incidencia = new Incidencia(num,allotjament, data, tipusIncidencia);
+            Incidencia incidencia = new Incidencia(num, allotjament, data, tipusIncidencia);
 
             if (incidencia.getAllotjament().getEstatAllotjament()){
                 allotjament.tancarAllotjament(incidencia);
