@@ -12,7 +12,6 @@ public class IniciadorCamping {
 
     // Declarem les opcions per a referir-se a les opcions del menú.
     static public enum OpcionsMenuPrincipal {
-        INICIAR_DADES,
         LLISTAR_ALLOTJAMENTS,
         LLISTAR_ALLOTJAMENTS_OPERATIUS,
         LLISTAR_ALLOTJAMENTS_NO_OPERATIUS,
@@ -30,7 +29,6 @@ public class IniciadorCamping {
 
     // Declarem descripcions personalitzades per a les opcions del menú principal
     static public String[] descMenuPrincipal={
-        "Inicialitzar dades del camping",
         "Llista tots els allotjaments",
         "Llistar els allotjaments operatius",
         "Llistar els allotjaments no operatius",

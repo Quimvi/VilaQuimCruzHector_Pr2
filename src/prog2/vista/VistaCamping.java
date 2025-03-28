@@ -23,6 +23,7 @@ public class VistaCamping {
     }
 
     public void gestioCamping(Scanner sc) {
+        campingGreen.inicialitzaDadesCamping();
 
         // Creem l'objecte per al menú. Li passem com a primer paràmetre el nom del menú
         Menu<IniciadorCamping.OpcionsMenuPrincipal> menu=new Menu<IniciadorCamping.OpcionsMenuPrincipal>("Menu Principal", IniciadorCamping.OpcionsMenuPrincipal.values());
@@ -42,40 +43,33 @@ public class VistaCamping {
 
             // Fem les accions necessàries
             switch(opcio) {
-                case INICIAR_DADES:
-                    System.out.println("Has triat la opció 1");
-                    System.out.println("Iniciant dades...");
-                    campingGreen.inicialitzaDadesCamping();
-                    System.out.println("Dades iniciades");
-                    break;
-
                 case LLISTAR_ALLOTJAMENTS:
-                    System.out.println("Has triat la opció 2");
+                    System.out.println("Has triat la opció 1");
                     campingGreen.llistarAllotjaments("Tots");
                     break;
 
                 case LLISTAR_ALLOTJAMENTS_OPERATIUS:
-                    System.out.println("Has triat la opció 3");
+                    System.out.println("Has triat la opció 2");
                     campingGreen.llistarAllotjaments("Operatiu");
                     break;
 
                 case LLISTAR_ALLOTJAMENTS_NO_OPERATIUS:
-                    System.out.println("Has triat la opció 4");
+                    System.out.println("Has triat la opció 3");
                     campingGreen.llistarAllotjaments("No operatiu");
                     break;
 
                 case LLISTAR_ACCESSOS_OBERTS:
-                    System.out.println("Has triat la opció 5");
+                    System.out.println("Has triat la opció 4");
                     campingGreen.llistarAccessos("Obert");
                     break;
 
                 case LLISTAR_ACCESSOS_TANCATS:
-                    System.out.println("Has triat la opció 6");
+                    System.out.println("Has triat la opció 5");
                     campingGreen.llistarAccessos("Tancat");
                     break;
 
                 case LLISTAR_INCIDENCIES:
-                    System.out.println("Has triat la opció 7");
+                    System.out.println("Has triat la opció 6");
                     campingGreen.llistarIncidencies();
                     break;
 
@@ -83,7 +77,7 @@ public class VistaCamping {
                     int num;
                     String tipus, data;
 
-                    System.out.println("Has triat la opció 8");
+                    System.out.println("Has triat la opció 7");
                     System.out.println("Número d'incidència? ");
                     num=sc.nextInt();
                     System.out.println("Tipus d'incidència? ");
@@ -103,7 +97,7 @@ public class VistaCamping {
                 case ELIMINAR_INCIDENCIA:
                     int num2;
 
-                    System.out.println("Has triat la opció 9");
+                    System.out.println("Has triat la opció 8");
                     campingGreen.llistarIncidencies();
                     System.out.println("Digues el número de l'incidència -> ");
                     num2=sc.nextInt();
@@ -113,19 +107,19 @@ public class VistaCamping {
                     break;
 
                 case CALCULAR_ACCESSOS_COTXE:
-                    System.out.println("Has triat la opció 10");
+                    System.out.println("Has triat la opció 9");
                     System.out.println("Accessos accessibles: " + campingGreen.calculaAccessosAccessibles());
                     break;
 
                 case CALCULAR_METRES_ASFALT:
-                    System.out.println("Has triat la opció 11");
+                    System.out.println("Has triat la opció 10");
                     System.out.println("Metres quadrats asfaltats: " + campingGreen.calculaMetresQuadratsAsfalt());
                     break;
 
                 case GUARDAR_CAMPING:
                     String camiDesti;
 
-                    System.out.println("Has triat la opció 12");
+                    System.out.println("Has triat la opció 11");
                     System.out.println("Ruta del fitxer de destinació? ");
                     camiDesti=sc.next();
 
@@ -135,7 +129,7 @@ public class VistaCamping {
                 case RECUPERAR_CAMPING:
                     String camiOrigen;
 
-                    System.out.println("Has triat la opció 13");
+                    System.out.println("Has triat la opció 12");
                     System.out.println("Ruta del fitxer de origen? ");
                     camiOrigen=sc.next();
 
