@@ -29,19 +29,19 @@ public class IniciadorCamping {
 
     // Declarem descripcions personalitzades per a les opcions del menú principal
     static public String[] descMenuPrincipal={
-        "Llista tots els allotjaments",
-        "Llistar els allotjaments operatius",
-        "Llistar els allotjaments no operatius",
-        "Llistar els accessos oberts",
-        "Llistar els accessos tancats",
-        "Llistar totes les incidències",
-        "Afegir una incidència",
-        "Eliminar una incidència",
-        "Calcular nombre d'accessos amb cotxe",
-        "Calcular nombre d'metres asfaltats",
-        "Guardar el camping",
-        "Recuperar un camping",
-        "Sortir"
+        " 1. Llista tots els allotjaments",
+        " 2. Llistar els allotjaments operatius",
+        " 3. Llistar els allotjaments no operatius",
+        " 4. Llistar els accessos oberts",
+        " 5. Llistar els accessos tancats",
+        " 6. Llistar totes les incidències",
+        " 7. Afegir una incidència",
+        " 8. Eliminar una incidència",
+        " 9. Calcular nombre d'accessos amb cotxe",
+        "10. Calcular nombre d'metres asfaltats",
+        "11. Guardar el camping",
+        "12. Recuperar un camping",
+        "13. Sortir"
     };
 
     public static void main(String[] args) {

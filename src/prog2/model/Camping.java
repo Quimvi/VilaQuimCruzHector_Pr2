@@ -84,7 +84,6 @@ public class Camping implements InCamping{
 
             try {
                 if (fos != null) {
-
                     fos.close();
                 }
             } catch (Exception e) {
@@ -258,7 +257,6 @@ public class Camping implements InCamping{
         llistaAllotjaments.afegirAllotjament(ALL6);
 
         /* Accés */
-        /*
         Acc1.afegirAllotjament(ALL1); Acc1.afegirAllotjament(ALL2);
         Acc2.afegirAllotjament(ALL1); Acc2.afegirAllotjament(ALL2);
         Acc3.afegirAllotjament(ALL3);
@@ -271,10 +269,5 @@ public class Camping implements InCamping{
         Acc10.afegirAllotjament(ALL2);
         Acc11.afegirAllotjament(ALL6);
         Acc12.afegirAllotjament(ALL6);
-
-         */
-
-
     }
-
 }
