@@ -37,7 +37,7 @@ public class IniciadorCamping {
         "Llistar totes les incidències",
         "Afegir una incidència",
         "Eliminar una incidència",
-        "Calcular nombre d'accessos amb cotxe",
+        "Calcular nombre d'accessos totals",
         "Calcular nombre d'metres asfaltats",
         "Guardar el camping",
         "Recuperar un camping",

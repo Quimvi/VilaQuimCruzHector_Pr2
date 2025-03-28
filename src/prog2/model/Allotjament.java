@@ -84,17 +84,6 @@ public class Allotjament implements InAllotjament{
     public void tancarAllotjament(Incidencia in) {
         setEstatAllotjament(false);
         estatIluminacio = in.getIluminacioAllotjament();
-        /*
-        if (Incidencia.TipusIncidencia.Reparacio == in.getTipusIncidencia()) {
-            estatIluminacio = "100%";
-        }
-        else if (Incidencia.TipusIncidencia.Neteja == in.getTipusIncidencia()) {
-            estatIluminacio = "50%";
-        }
-        else {
-            estatIluminacio = "0%";
-        }
-        */
     }
 
     public void obrirAllotjament() {
@@ -104,6 +93,6 @@ public class Allotjament implements InAllotjament{
 
     public String toString() {
         return "Nom=" + this.nom_ + ", Id=" + this.idAllotjament + ", estat allotjament: " + getEstatAllotjament() + ", estat electric: " + getElectricitat()
-                + ", estada mínima en temp ALTA: " + this.estadaMinimaALTA_ + ", estada mínima en temp BAIXA: " + this.estadaMinimaBAIXA_ + ".\n";
+                + ", estada mínima en temp ALTA: " + this.estadaMinimaALTA_ + ", estada mínima en temp BAIXA: " + this.estadaMinimaBAIXA_ + "." + "\n";
     }
 }

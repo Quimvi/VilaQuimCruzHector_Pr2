@@ -107,9 +107,9 @@ public class VistaCamping {
                     System.out.println("Has triat la opció 7");
                     System.out.println("Número d'incidència? ");
                     num=sc.nextInt();
-                    System.out.println("Tipus d'incidència? ");
+                    System.out.println("Tipus d'incidència? (Reparacio, Neteja, Tancament) ");
                     tipus=sc.next();
-                    System.out.println("Data de l'incidència? ");
+                    System.out.println("Data de l'incidència? (dd/mm/yyyy)");
                     data=sc.next();
 
                     String id;

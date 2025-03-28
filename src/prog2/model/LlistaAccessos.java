@@ -17,7 +17,7 @@ public class LlistaAccessos implements InLlistaAccessos{
         while (itrAcces.hasNext()) {
             Acces acces = itrAcces.next();
             if (acc.getNom().equals(acces.getNom())){
-                throw new ExcepcioCamping("aquest acces ya existeix");
+                throw new ExcepcioCamping("Aquest acces ja existeix");
             }
         }
         accessos.add(acc);
@@ -38,7 +38,7 @@ public class LlistaAccessos implements InLlistaAccessos{
             }
     }
         if (!trobat){
-            throw new ExcepcioCamping("no hi han accesos en aquest estat");
+            throw new ExcepcioCamping("No hi ha accessos en aquest estat");
         }
         return concatenacioInfo.toString();
     }
@@ -46,7 +46,6 @@ public class LlistaAccessos implements InLlistaAccessos{
 
     public void actualitzaEstatAccessos() throws ExcepcioCamping{
         Iterator<Acces> itrAcces = this.accessos.iterator();
-
 
         while (itrAcces.hasNext()) {
             Acces accesllista = itrAcces.next();
@@ -56,7 +55,7 @@ public class LlistaAccessos implements InLlistaAccessos{
             }else{
                 accesllista.tancarAcces();
             }
-            }
+        }
     }
 
     public int calculaAccessosAccessibles() throws ExcepcioCamping {
@@ -88,11 +87,5 @@ public class LlistaAccessos implements InLlistaAccessos{
 
     public void buidar(){
         this.accessos.clear();
-
-
     }
-
 }
-
-
-

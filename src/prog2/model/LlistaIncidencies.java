@@ -44,7 +44,7 @@ public class LlistaIncidencies implements InLlistaIncidencies{
             }
         }
         if (!trobat) {
-            throw new ExcepcioCamping("no es troba en la llista");
+            throw new ExcepcioCamping("Aquesta incidència no existeix");
         }
     }
 
@@ -59,7 +59,7 @@ public class LlistaIncidencies implements InLlistaIncidencies{
             concatenacioInfo.append(incidenciaLlist.toString());
         }
         if(!hiha){
-            throw new ExcepcioCamping("no hi han incidencies");
+            throw new ExcepcioCamping("No hi ha incidències");
         }
         return concatenacioInfo.toString();
     }
@@ -72,6 +72,6 @@ public class LlistaIncidencies implements InLlistaIncidencies{
                 return incidenciaLlist;
             }
         }
-        throw new ExcepcioCamping("Aquest num d'incidencia no existeix");
+        throw new ExcepcioCamping("Aquest número d'incidència no existeix");
     }
 }

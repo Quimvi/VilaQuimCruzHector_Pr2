@@ -46,7 +46,7 @@ public class Incidencia {
     }
 
     public String toString(){
-        return "Nùmero d'incidència: " + getNumIncidencia() + ", Allotjament: " + getAllotjament() + ", Data: " + getData() + ", Tipus: " + getTipusIncidencia();
+        return "Nùmero d'incidència: " + getNumIncidencia() + ", Allotjament: " + getAllotjament() + ", Data: " + getData() + ", Tipus: " + getTipusIncidencia() + "\n";
     }
 
     public String getIluminacioAllotjament() {

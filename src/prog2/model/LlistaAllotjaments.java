@@ -51,7 +51,7 @@ public class LlistaAllotjaments implements InLlistaAllotjaments {
             }
         }
         if (!trobat){
-            throw new ExcepcioCamping("No hi han allotjaments en aquest estat");
+            throw new ExcepcioCamping("No hi ha allotjaments en aquest estat");
         }
         return concatenacioInfo.toString();
     }

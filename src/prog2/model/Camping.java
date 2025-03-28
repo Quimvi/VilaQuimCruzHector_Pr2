@@ -116,7 +116,7 @@ public class Camping implements InCamping{
                 throw new ExcepcioCamping("No s'ha trobat l'arxiu: "+e.getMessage());
             }
             catch (IOException e) {
-                throw new ExcepcioCamping("Error al cargar l'arxiu: "+e.getMessage());
+                throw new ExcepcioCamping("Error al carregar l'arxiu: "+e.getMessage());
             }
             catch (ClassNotFoundException e){
                 throw new ExcepcioCamping("No s'ha pogut fer càsting de les dades camping: "+e.getMessage());
