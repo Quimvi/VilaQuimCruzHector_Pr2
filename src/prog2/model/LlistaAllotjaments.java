@@ -85,7 +85,7 @@ public abstract class LlistaAllotjaments implements InAllotjament {
         return false;
     }
 
-    public static Allotjament getAllotjament(String id) throws ExcepcioCamping{
+    public Allotjament getAllotjament(String id) throws ExcepcioCamping{
         Iterator<Allotjament> itrAllot = allotjaments.iterator();
 
         while (itrAllot.hasNext()) {
