@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class LlistaAccessos implements InLlistaAccessos{
-    private ArrayList<Acces> accessos;
+    private final ArrayList<Acces> accessos;
 
     public LlistaAccessos(){
         this.accessos = new ArrayList<Acces>();
