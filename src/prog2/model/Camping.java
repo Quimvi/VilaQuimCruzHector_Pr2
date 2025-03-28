@@ -2,10 +2,7 @@ package prog2.model;
 
 import prog2.vista.ExcepcioCamping;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class Camping implements InCamping{
     private String nomCamping;
@@ -18,6 +15,18 @@ public class Camping implements InCamping{
         llistaAllotjaments = null;
         llistaAccessos = null;
         llistaIncidencies = null;
+    }
+
+    public LlistaAccessos getLlistaAccessos() {
+        return llistaAccessos;
+    }
+
+    public LlistaIncidencies getLlistaIncidencies() {
+        return llistaIncidencies;
+    }
+
+    public LlistaAllotjaments getLlistaAllotjaments() {
+        return llistaAllotjaments;
     }
 
     public void setNomCamping (String nomCamping){
@@ -53,7 +62,8 @@ public class Camping implements InCamping{
     public void afegirIncidencia(int num, String tipus, String idAllotjament, String data) throws ExcepcioCamping{
         Allotjament allotjament = llistaAllotjaments.getAllotjament(idAllotjament);
         llistaIncidencies.afegirIncidencia(num,tipus,allotjament,data);
-        //fer la comprovació del numero d'In
+        llistaAccessos.actualitzaEstatAccessos();
+        //fer la comprovacio del numero d'In
     }
 
     public void eliminarIncidencia(int num) throws ExcepcioCamping{
@@ -95,7 +105,24 @@ public class Camping implements InCamping{
     }
 
     public static Camping load(String camiOrigen) throws ExcepcioCamping {
-        throw new UnsupportedOperationException("Aquest mètode està implementat a la classe Camping");
+            try {
+                FileInputStream fin = new FileInputStream(camiOrigen);
+                ObjectInputStream ois = new ObjectInputStream(fin);
+                Camping campingCarregat = (Camping) ois.readObject();
+                ois.close();
+                fin.close();
+                return campingCarregat;
+
+            }
+            catch (FileNotFoundException e) {
+                throw new ExcepcioCamping("No s'ha trobat l'arxiu: "+e.getMessage());
+            }
+            catch (IOException e) {
+                throw new ExcepcioCamping("Error al cargar l'arxiu: "+e.getMessage());
+            }
+            catch (ClassNotFoundException e){
+                throw new ExcepcioCamping("No s'ha pogut fer càsting de les dades camping: "+e.getMessage());
+            }
     }
 
     public void inicialitzaDadesCamping() {
