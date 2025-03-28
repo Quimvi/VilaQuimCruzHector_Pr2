@@ -46,23 +46,15 @@ public class LlistaAccessos implements InLlistaAccessos{
 
     public void actualitzaEstatAccessos() throws ExcepcioCamping{
         Iterator<Acces> itrAcces = this.accessos.iterator();
-        boolean algunObert;
+
 
         while (itrAcces.hasNext()) {
-            algunObert = false;
             Acces accesllista = itrAcces.next();
-            Iterator<Allotjament> itrAllotj = accesllista.getLlistaAllotjament().getAllotjaments().iterator();
 
-            while (itrAllotj.hasNext()) {
-                Allotjament allotjamentAcces= itrAllotj.next();
-                if(allotjamentAcces.getEstatAllotjament()){
-                    algunObert = true;
-                }
-            }
-            if (!algunObert){
-                accesllista.tancarAcces();
-            }else{
+            if (accesllista.getLlistaAllotjament().containsAllotjamentOperatiu()){
                 accesllista.obrirAcces();
+            }else{
+                accesllista.tancarAcces();
             }
             }
     }
@@ -74,7 +66,7 @@ public class LlistaAccessos implements InLlistaAccessos{
         while (itrAcces.hasNext()) {
             Acces accesllista = itrAcces.next();
             if (accesllista.getLlistaAllotjament().containsAllotjamentOperatiu()) {
-                resultat += accesllista.getLlistaAllotjament().getAllotjaments().size();
+                resultat ++;
             }
         }
         return resultat;
