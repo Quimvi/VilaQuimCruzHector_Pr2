@@ -38,35 +38,37 @@ public class VistaCamping {
             opcio=menu.getOpcio(sc);
 
             // Fem les accions necessàries
+            Camping camping = new Camping(_nomCamping);
+            camping.inicialitzaDadesCamping();
             switch(opcio) {
                 case LLISTAR_ALLOTJAMENTS:
                     System.out.println("Has triat la opció 1");
-                    LlistaAllotjaments.llistarAllotjaments("Tots");
+                    camping.getLlistaAllotjaments().llistarAllotjaments("Tots");
                     break;
 
                 case LLISTAR_ALLOTJAMENTS_OPERATIUS:
                     System.out.println("Has triat la opció 2");
-                    LlistaAllotjaments.llistarAllotjaments("Operatiu");
+                    camping.getLlistaAllotjaments().llistarAllotjaments("Operatiu");
                     break;
 
                 case LLISTAR_ALLOTJAMENTS_NO_OPERATIUS:
                     System.out.println("Has triat la opció 3");
-                    LlistaAllotjaments.llistarAllotjaments("No operatiu");
+                    camping.getLlistaAllotjaments().llistarAllotjaments("No operatiu");
                     break;
 
                 case LLISTAR_ACCESSOS_OBERTS:
                     System.out.println("Has triat la opció 4");
-                    LlistaAccessos.llistarAccessos(true);
+                    camping.getLlistaAccessos().llistarAccessos(true);
                     break;
 
                 case LLISTAR_ACCESSOS_TANCATS:
                     System.out.println("Has triat la opció 5");
-                    LlistaAccessos.llistarAccessos(false);
+                    camping.getLlistaAccessos().llistarAccessos(false);
                     break;
 
                 case LLISTAR_INCIDENCIES:
                     System.out.println("Has triat la opció 6");
-                    LlistaIncidencies.llistarIncidencies();
+                    camping.getLlistaIncidencies().llistarIncidencies();
                     break;
 
                 case AFEGIR_INCIDENCIA:
@@ -82,11 +84,11 @@ public class VistaCamping {
                     data=sc.next();
 
                     String id;
-                    LlistaAllotjaments.llistarAllotjaments("Operatiu");
+                    camping.getLlistaAllotjaments().llistarAllotjaments("Operatiu");
                     System.out.println("Digues la Id de l'allotjament -> ");
                     id=sc.next();
 
-                    LlistaIncidencies.afegirIncidencia(num, tipus, LlistaAllotjaments.getAllotjament(id), data);
+                    camping.getLlistaIncidencies().afegirIncidencia(num, tipus, LlistaAllotjaments.getAllotjament(id), data);
                     System.out.println("Incidència afegida");
                     break;
 
@@ -94,22 +96,22 @@ public class VistaCamping {
                     int num2;
 
                     System.out.println("Has triat la opció 8");
-                    LlistaIncidencies.llistarIncidencies();
+                    camping.getLlistaIncidencies().llistarIncidencies();
                     System.out.println("Digues el número de l'incidència -> ");
                     num2=sc.nextInt();
 
-                    LlistaIncidencies.eliminarIncidencia(LlistaIncidencies.getIncidencia(num2));
+                    camping.getLlistaIncidencies().eliminarIncidencia(camping.getLlistaIncidencies().getIncidencia(num2));
                     System.out.println("Incidència eliminada");
                     break;
 
                 case CALCULAR_ACCESSOS_COTXE:
                     System.out.println("Has triat la opció 9");
-                    System.out.println("Accessos accessibles: " + LlistaAccessos.calculaAccessosAccessibles());
+                    System.out.println("Accessos accessibles: " + camping.getLlistaAccessos().calculaAccessosAccessibles());
                     break;
 
                 case CALCULAR_METRES_ASFALT:
                     System.out.println("Has triat la opció 10");
-                    System.out.println("Metres quadrats asfaltats: " + LlistaAccessos.calculaMetresQuadratsAsfalt());
+                    System.out.println("Metres quadrats asfaltats: " + camping.getLlistaAccessos().calculaMetresQuadratsAsfalt());
                     break;
 
                 case GUARDAR_CAMPING:

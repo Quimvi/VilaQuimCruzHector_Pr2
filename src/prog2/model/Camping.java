@@ -10,14 +10,26 @@ public class Camping implements InCamping{
     private final LlistaAccessos llistaAccessos;
     private final LlistaIncidencies llistaIncidencies;
 
-    Camping(String nomCamping){
+    public Camping(String nomCamping){
         setNomCamping(nomCamping);
         llistaAllotjaments = null;
         llistaAccessos = null;
         llistaIncidencies = null;
     }
 
-    void setNomCamping (String nomCamping){
+    public LlistaAccessos getLlistaAccessos() {
+        return llistaAccessos;
+    }
+
+    public LlistaIncidencies getLlistaIncidencies() {
+        return llistaIncidencies;
+    }
+
+    public LlistaAllotjaments getLlistaAllotjaments() {
+        return llistaAllotjaments;
+    }
+
+    public void setNomCamping (String nomCamping){
         this.nomCamping = nomCamping;
     }
 
