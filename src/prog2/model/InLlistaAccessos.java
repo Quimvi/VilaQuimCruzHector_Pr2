@@ -19,34 +19,36 @@ public interface InLlistaAccessos {
      * Buida la llista d'accessos
      */
      public void buidar();
-     
-     /**
+
+    /**
      * Itera sobre la llista d'accessos i retorna un String amb la informació de tots els accessos amb l'estat rebut per paràmetre.
-     * En cas que no hi hagi accessos en l'estat passat com a paràmetre llança una excepció. 
+     * En cas que no hi hagi accessos en l'estat passat com a paràmetre llança una excepció.
+     *
      * @param estat boolean
      * @return String
      * @throws prog2.vista.ExcepcioCamping Aquest mètode llança una excepció en cas que no hi hagi accessos en l'estat passat com a parametre.
-     * 
      */
-     public String llistarAccessos(boolean estat) throws ExcepcioCamping;
-     
-     /**
+    public String llistarAccessos(boolean estat) throws ExcepcioCamping;
+
+    /**
       * Recorre tota la llista d'accessos i els tanca. Només decidirà obrir cadascun d'ells si permet l'accés a algun allotjament operatiu.
      * @throws prog2.vista.ExcepcioCamping Aquest mètode podria llançar una excepció si fos necessari.
       */
      public void actualitzaEstatAccessos() throws ExcepcioCamping;
-     
-     /**
+
+    /**
      * Itera sobre la llista d'accessos i retorna el número d'accessos amb accessibilitat.
+     *
      * @return int
      * @throws prog2.vista.ExcepcioCamping Aquest mètode podria llançar una excepció si fos necessari.
      */
-     public int calculaAccessosAccessibles() throws ExcepcioCamping;
-     
-     /**
+    public int calculaAccessosAccessibles() throws ExcepcioCamping;
+
+    /**
      * Itera sobre la llista d'accessos, i pels accessos asfaltats suma els metres quadrats d'asfalt i ho retorna.
+     *
      * @return float amb els metres quadrats d'asfalt.
      * @throws prog2.vista.ExcepcioCamping Aquest mètode podria llançar una excepció si fos necessari.
      */
-     public float calculaMetresQuadratsAsfalt() throws ExcepcioCamping;
+    public float calculaMetresQuadratsAsfalt() throws ExcepcioCamping;
 }

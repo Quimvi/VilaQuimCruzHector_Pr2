@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class LlistaAccessos implements InLlistaAccessos{
-    private ArrayList<Acces> accessos;
+    private static ArrayList<Acces> accessos;
 
     public LlistaAccessos(){
-        this.accessos = new ArrayList<Acces>();
+        accessos = new ArrayList<Acces>();
     }
 
     public void afegirAcces(Acces acc) throws ExcepcioCamping{
-        Iterator<Acces> itrAcces = this.accessos.iterator();
+        Iterator<Acces> itrAcces = accessos.iterator();
         while (itrAcces.hasNext()) {
             Acces acces = itrAcces.next();
             if (acc.getNom().equals(acces.getNom())){
@@ -26,11 +26,11 @@ public class LlistaAccessos implements InLlistaAccessos{
     public String llistarAccessos(boolean estat) throws ExcepcioCamping{
         boolean trobat = false;
         StringBuffer concatenacioInfo = new StringBuffer();
-        Iterator<Acces> itrAcces = this.accessos.iterator();
+        Iterator<Acces> itrAcces = accessos.iterator();
         while (itrAcces.hasNext()) {
             Acces accesllista = itrAcces.next();
             if (estat && accesllista.getEstat()) {
-                concatenacioInfo.append(accesllista.toString()); //mirar que funcioni correctament
+                concatenacioInfo.append(accesllista.toString());
                 trobat = true;
             } else if (!estat && !accesllista.getEstat()) {
                 concatenacioInfo.append(accesllista.toString());
@@ -38,14 +38,14 @@ public class LlistaAccessos implements InLlistaAccessos{
             }
     }
         if (!trobat){
-            throw new ExcepcioCamping("no hi han allotjaments en aquest estat");
+            throw new ExcepcioCamping("No hi han allotjaments en aquest estat");
         }
         return concatenacioInfo.toString();
     }
 
 
     public void actualitzaEstatAccessos() throws ExcepcioCamping{
-        Iterator<Acces> itrAcces = this.accessos.iterator();
+        Iterator<Acces> itrAcces = accessos.iterator();
         boolean algunObert;
 
         while (itrAcces.hasNext()) {
@@ -69,7 +69,7 @@ public class LlistaAccessos implements InLlistaAccessos{
 
     public int calculaAccessosAccessibles() throws ExcepcioCamping {
         int resultat = 0;
-        Iterator<Acces> itrAcces = this.accessos.iterator();
+        Iterator<Acces> itrAcces = accessos.iterator();
 
         while (itrAcces.hasNext()) {
             Acces accesllista = itrAcces.next();
@@ -82,7 +82,7 @@ public class LlistaAccessos implements InLlistaAccessos{
 
     public float calculaMetresQuadratsAsfalt() throws ExcepcioCamping{
         float resultat = 0;
-        Iterator<Acces> itrAcces = this.accessos.iterator();
+        Iterator<Acces> itrAcces = accessos.iterator();
 
         while (itrAcces.hasNext()) {
             Acces accesllista = itrAcces.next();
@@ -95,13 +95,10 @@ public class LlistaAccessos implements InLlistaAccessos{
     }
 
     public void buidar(){
-        Iterator<Acces> itrAcces = this.accessos.iterator();
+        Iterator<Acces> itrAcces = accessos.iterator();
         Acces acces = itrAcces.next();
         while (itrAcces.hasNext()) {
-            this.accessos.remove(acces);
-            }
-
+            accessos.remove(acces);
+        }
     }
-
-
 }

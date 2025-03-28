@@ -38,10 +38,11 @@ public interface InCamping {
 
     /**
      * Afegeix una nova incidència al registre del càmping.
-     * @param num Número identificador de la incidència.
-     * @param tipus Tipus d'incidència (en format string)
+     *
+     * @param num           Número identificador de la incidència.
+     * @param tipus         Tipus d'incidència (en format string)
      * @param idAllotjament Identificador de l'allotjament afectat.
-     * @param data Data en què s'ha registrat la incidència.
+     * @param data          Data en què s'ha registrat la incidència.
      * @throws ExcepcioCamping
      */
     void afegirIncidencia(int num, String tipus, String idAllotjament, String data) throws ExcepcioCamping;
@@ -67,6 +68,7 @@ public interface InCamping {
 
     /**
      * Guarda l'estat actual del càmping en un fitxer.
+     *
      * @param camiDesti Ruta del fitxer de destinació.
      * @throws ExcepcioCamping
      */
