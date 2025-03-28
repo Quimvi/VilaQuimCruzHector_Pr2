@@ -6,15 +6,13 @@ import java.io.*;
 
 public class Camping implements InCamping{
     private String nomCamping;
-    private final LlistaAllotjaments llistaAllotjaments;
-    private final LlistaAccessos llistaAccessos;
-    private final LlistaIncidencies llistaIncidencies;
+    private final LlistaAllotjaments llistaAllotjaments = new LlistaAllotjaments();
+    private final LlistaAccessos llistaAccessos = new LlistaAccessos();
+    private final LlistaIncidencies llistaIncidencies = new LlistaIncidencies();
 
     public Camping(String nomCamping){
         setNomCamping(nomCamping);
-        llistaAllotjaments = null;
-        llistaAccessos = null;
-        llistaIncidencies = null;
+
     }
 
     public LlistaAccessos getLlistaAccessos() {
@@ -126,7 +124,6 @@ public class Camping implements InCamping{
     }
 
     public void inicialitzaDadesCamping() {
-
         llistaAccessos.buidar();
 
         float asfalt = 200;

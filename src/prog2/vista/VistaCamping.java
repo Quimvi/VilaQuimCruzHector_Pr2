@@ -44,36 +44,63 @@ public class VistaCamping {
             // Fem les accions necessàries
             switch(opcio) {
                 case LLISTAR_ALLOTJAMENTS:
-                    System.out.println("Has triat la opció 1");
-                    campingGreen.llistarAllotjaments("Tots");
+                    try {
+                        System.out.println("Has triat la opció 1");
+                        System.out.println(campingGreen.llistarAllotjaments("Tots"));
+                    }catch (ExcepcioCamping ex){
+                        System.out.println(ex.getMessage());
+                    }
                     break;
 
                 case LLISTAR_ALLOTJAMENTS_OPERATIUS:
+                    try {
                     System.out.println("Has triat la opció 2");
-                    campingGreen.llistarAllotjaments("Operatiu");
+                    System.out.println(campingGreen.llistarAllotjaments("Operatiu"));
+                    }catch (ExcepcioCamping ex){
+                        System.out.println(ex.getMessage());
+                    }
                     break;
+
 
                 case LLISTAR_ALLOTJAMENTS_NO_OPERATIUS:
+                    try {
                     System.out.println("Has triat la opció 3");
-                    campingGreen.llistarAllotjaments("No operatiu");
+                    System.out.println(campingGreen.llistarAllotjaments("No operatiu"));
+                    }catch (ExcepcioCamping ex){
+                        System.out.println(ex.getMessage());
+                    }
                     break;
 
+
                 case LLISTAR_ACCESSOS_OBERTS:
+                    try {
                     System.out.println("Has triat la opció 4");
-                    campingGreen.llistarAccessos("Obert");
+                    System.out.println(campingGreen.llistarAccessos("Obert"));
+                    }catch (ExcepcioCamping ex){
+                        System.out.println(ex.getMessage());
+                    }
                     break;
 
                 case LLISTAR_ACCESSOS_TANCATS:
+                    try {
                     System.out.println("Has triat la opció 5");
-                    campingGreen.llistarAccessos("Tancat");
+                    System.out.println(campingGreen.llistarAccessos("Tancat"));
+                    }catch (ExcepcioCamping ex){
+                        System.out.println(ex.getMessage());
+                    }
                     break;
 
                 case LLISTAR_INCIDENCIES:
+                    try {
                     System.out.println("Has triat la opció 6");
-                    campingGreen.llistarIncidencies();
+                    System.out.println(campingGreen.llistarIncidencies());
+                    }catch (ExcepcioCamping ex){
+                        System.out.println(ex.getMessage());
+                    }
                     break;
 
                 case AFEGIR_INCIDENCIA:
+                    try {
                     int num;
                     String tipus, data;
 
@@ -92,9 +119,13 @@ public class VistaCamping {
 
                     campingGreen.afegirIncidencia(num, tipus, id, data);
                     System.out.println("Incidència afegida");
+                    }catch (ExcepcioCamping ex){
+                        System.out.println(ex.getMessage());
+                    }
                     break;
 
                 case ELIMINAR_INCIDENCIA:
+                    try{
                     int num2;
 
                     System.out.println("Has triat la opció 8");
@@ -104,6 +135,9 @@ public class VistaCamping {
 
                     campingGreen.eliminarIncidencia(num2);
                     System.out.println("Incidència eliminada");
+                    }catch (ExcepcioCamping ex){
+                        System.out.println(ex.getMessage());
+                    }
                     break;
 
                 case CALCULAR_ACCESSOS_COTXE:

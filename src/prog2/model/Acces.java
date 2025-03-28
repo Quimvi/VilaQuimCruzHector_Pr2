@@ -9,7 +9,7 @@ public abstract class Acces implements InAcces{
     protected String nom;
     protected boolean accessibilitat; // true cotxe i caminant, false caminant
     protected boolean estat;
-    protected LlistaAllotjaments llistaAllotjament;
+    protected LlistaAllotjaments llistaAllotjament = new LlistaAllotjaments();
 
 
     public Acces(String nom, boolean accessibilitat, boolean estat){

@@ -4,12 +4,12 @@ import prog2.vista.ExcepcioCamping;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public abstract class LlistaAllotjaments implements InAllotjament {
+public class LlistaAllotjaments implements InLlistaAllotjaments {
 
-    private static ArrayList<Allotjament> allotjaments;
+    private final ArrayList<Allotjament> allotjaments;
 
     public LlistaAllotjaments(){
-        allotjaments = new ArrayList<Allotjament>();
+        this.allotjaments = new ArrayList<Allotjament>();
     }
 
     public ArrayList<Allotjament> getAllotjaments(){
@@ -19,25 +19,18 @@ public abstract class LlistaAllotjaments implements InAllotjament {
     public void afegirAllotjament(Allotjament allotjament) throws ExcepcioCamping {
 
         Iterator<Allotjament> itrAllot = allotjaments.iterator();
-
         while (itrAllot.hasNext()) {
             Allotjament allotjamentLlist = itrAllot.next();
             if (allotjamentLlist.getNom().equals(allotjament.getNom()) && allotjamentLlist.getId().equals(allotjament.getNom())) {
                 throw new ExcepcioCamping("Aquest allotjament ja es troba en allotjaments");
             }
-            allotjaments.add(allotjament);
-
         }
+        allotjaments.add(allotjament);
     }
 
-    public void buidar(){
-        int i = 0;
-        int e;
-        while (i < allotjaments.size()){
-            e = allotjaments.size() - 1;
-            allotjaments.remove(e);
-            }
-        }
+    public void buidar() {
+        this.allotjaments.clear();
+    }
 
     public String llistarAllotjaments(String estat) throws ExcepcioCamping {
         boolean trobat = false;

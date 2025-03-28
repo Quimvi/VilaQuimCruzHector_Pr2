@@ -38,7 +38,7 @@ public class LlistaAccessos implements InLlistaAccessos{
             }
     }
         if (!trobat){
-            throw new ExcepcioCamping("no hi han allotjaments en aquest estat");
+            throw new ExcepcioCamping("no hi han accesos en aquest estat");
         }
         return concatenacioInfo.toString();
     }
@@ -87,13 +87,12 @@ public class LlistaAccessos implements InLlistaAccessos{
     }
 
     public void buidar(){
-        Iterator<Acces> itrAcces = this.accessos.iterator();
-        Acces acces = itrAcces.next();
-        while (itrAcces.hasNext()) {
-            this.accessos.remove(acces);
-            }
+        this.accessos.clear();
+
 
     }
 
-
 }
+
+
+
