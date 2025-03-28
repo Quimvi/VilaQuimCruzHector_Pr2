@@ -81,7 +81,7 @@ public class BungalowPremium extends Casa{
     public String toString() {
         return "Nom = " + this.nom_ + ", Id = " + this.idAllotjament + ", Mida = " + this.mida + ", Habitacions = " + this.habitacions + ", placesPersones = " + this.placesPersones
                 + ", placesParquing = " + this.placesParquing + ", Terrassa = " + this.terrassa + ", tv = " + this.tv + ", aireFred = " + this.aireFred
-                + ", serveisExtra = " + this.serveisExtra + ", codiWifi = " + this.codiWifi + ", estada mínima en temp ALTA = " + this.estadaMinimaALTA_
-                + ", estada mínima en temp BAIXA = " + this.estadaMinimaBAIXA_;
+                + ", serveisExtra = " + this.serveisExtra + ", codiWifi = " + this.codiWifi + ", estat allotjament: " + getEstatAllotjament() + ", estat electric: " + getElectricitat() +
+                ", estada mínima en temp ALTA = " + this.estadaMinimaALTA_ + ", estada mínima en temp BAIXA = " + this.estadaMinimaBAIXA_;
     }
 }
