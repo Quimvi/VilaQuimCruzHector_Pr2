@@ -1,82 +1,162 @@
 package prog2.model;
 
 import prog2.vista.ExcepcioCamping;
-
 import java.io.*;
 
-public class Camping implements InCamping{
-    private String nomCamping;
-    private final LlistaAllotjaments llistaAllotjaments = new LlistaAllotjaments();
-    private final LlistaAccessos llistaAccessos = new LlistaAccessos();
-    private final LlistaIncidencies llistaIncidencies = new LlistaIncidencies();
+/**
+ * Classe principal que representa un camping, implementant la interfície InCamping.
+ * Gestiona totes les operacions relacionades amb allotjaments, accessos i incidències.
+ */
+public class Camping implements InCamping, Serializable {
 
-    public Camping(String nomCamping){
+    // Atributs de la classe
+    private String nomCamping;  // Nom del camping
+    private final LlistaAllotjaments llistaAllotjaments = new LlistaAllotjaments();  // Llista d'allotjaments del camping
+    private final LlistaAccessos llistaAccessos = new LlistaAccessos();  // Llista d'accessos al camping
+    private final LlistaIncidencies llistaIncidencies = new LlistaIncidencies();  // Llista d'incidències registrades
+
+    /**
+     * Constructor de la classe Camping
+     * @param nomCamping Nom del camping
+     */
+    public Camping(String nomCamping) {
         setNomCamping(nomCamping);
-
     }
 
+    // Mètodes Getters per a les llistes
+
+    /**
+     * Obté la llista d'accessos del camping
+     * @return LlistaAccessos amb tots els accessos
+     */
     public LlistaAccessos getLlistaAccessos() {
         return llistaAccessos;
     }
 
+    /**
+     * Obté la llista d'incidències del camping
+     * @return LlistaIncidencies amb totes les incidències
+     */
     public LlistaIncidencies getLlistaIncidencies() {
         return llistaIncidencies;
     }
 
+    /**
+     * Obté la llista d'allotjaments del camping
+     * @return LlistaAllotjaments amb tots els allotjaments
+     */
     public LlistaAllotjaments getLlistaAllotjaments() {
         return llistaAllotjaments;
     }
 
-    public void setNomCamping (String nomCamping){
+    // Mètodes per gestionar el nom del camping
+
+    /**
+     * Estableix el nom del camping
+     * @param nomCamping Nou nom per al camping
+     */
+    public void setNomCamping(String nomCamping) {
         this.nomCamping = nomCamping;
     }
 
-    public String getNomCamping(){
+    /**
+     * Obté el nom del camping
+     * @return String amb el nom del camping
+     */
+    public String getNomCamping() {
         return this.nomCamping;
     }
 
-    public String llistarAllotjaments(String estat) throws ExcepcioCamping{
-        return this.llistaAllotjaments.llistarAllotjaments(estat);
+    // Mètodes per llistar continguts
 
+    /**
+     * Llista els allotjaments segons l'estat especificat
+     * @param estat Estat dels allotjaments a llistar
+     * @return String amb la llista d'allotjaments
+     * @throws ExcepcioCamping Si hi ha algun error en el procés
+     */
+    public String llistarAllotjaments(String estat) throws ExcepcioCamping {
+        return this.llistaAllotjaments.llistarAllotjaments(estat);
     }
 
-    public String llistarAccessos(String infoEstat) throws ExcepcioCamping{
+    /**
+     * Llista els accessos segons l'estat especificat
+     * @param infoEstat Estat dels accessos a llistar ("Obert" o "Tancat")
+     * @return String amb la llista d'accessos
+     * @throws ExcepcioCamping Si l'estat no és vàlid
+     */
+    public String llistarAccessos(String infoEstat) throws ExcepcioCamping {
         boolean estat;
-        if (infoEstat.equals("Obert")){
+        if (infoEstat.equals("Obert")) {
             estat = true;
-        }else if (infoEstat.equals("Tancat")){
+        } else if (infoEstat.equals("Tancat")) {
             estat = false;
-        }else{
+        } else {
             throw new ExcepcioCamping("Infoestat inexistent");
         }
         return this.llistaAccessos.llistarAccessos(estat);
     }
 
-
-    public String llistarIncidencies() throws ExcepcioCamping{
+    /**
+     * Llista totes les incidències registrades
+     * @return String amb la llista d'incidències
+     * @throws ExcepcioCamping Si hi ha algun error en el procés
+     */
+    public String llistarIncidencies() throws ExcepcioCamping {
         return llistaIncidencies.llistarIncidencies();
     }
 
-    public void afegirIncidencia(int num, String tipus, String idAllotjament, String data) throws ExcepcioCamping{
+    // Mètodes per gestionar incidències
+
+    /**
+     * Afegeix una nova incidència al sistema
+     * @param num Número d'incidència
+     * @param tipus Tipus d'incidència
+     * @param idAllotjament Identificador de l'allotjament afectat
+     * @param data Data de l'incidència
+     * @throws ExcepcioCamping Si l'allotjament no existeix o hi ha altres errors
+     */
+    public void afegirIncidencia(int num, String tipus, String idAllotjament, String data) throws ExcepcioCamping {
         Allotjament allotjament = llistaAllotjaments.getAllotjament(idAllotjament);
-        llistaIncidencies.afegirIncidencia(num,tipus,allotjament,data);
+        llistaIncidencies.afegirIncidencia(num, tipus, allotjament, data);
         llistaAccessos.actualitzaEstatAccessos();
-        //fer la comprovacio del numero d'In
     }
 
-    public void eliminarIncidencia(int num) throws ExcepcioCamping{
+    /**
+     * Elimina una incidència existent
+     * @param num Número de l'incidència a eliminar
+     * @throws ExcepcioCamping Si l'incidència no existeix
+     */
+    public void eliminarIncidencia(int num) throws ExcepcioCamping {
         Incidencia in = llistaIncidencies.getIncidencia(num);
         llistaIncidencies.eliminarIncidencia(in);
     }
 
-    public int calculaAccessosAccessibles(){
+    // Mètodes de càlcul
+
+    /**
+     * Calcula el nombre d'accessos accessibles
+     * @return Nombre d'accessos accessibles
+     */
+    public int calculaAccessosAccessibles() {
         return llistaAccessos.calculaAccessosAccessibles();
     }
 
-    public float calculaMetresQuadratsAsfalt(){
+    /**
+     * Calcula els metres quadrats d'asfalt totals
+     * @return Metres quadrats d'asfalt totals
+     */
+    public float calculaMetresQuadratsAsfalt() {
         return llistaAccessos.calculaMetresQuadratsAsfalt();
     }
 
+    // Mètodes de persistència
+
+    /**
+     * Guarda l'estat del camping en un fitxer
+     * @param camiDesti Ruta del fitxer on guardar
+     * @throws ExcepcioCamping Si hi ha errors en el procés de guardat
+     */
     public void save(String camiDesti) throws ExcepcioCamping {
         File fitxer = new File(camiDesti);
         FileOutputStream fos = null;
@@ -85,13 +165,9 @@ public class Camping implements InCamping{
             fos = new FileOutputStream(fitxer);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(this);
-            // Gestión de excepciones
         } catch (Exception e) {
             System.out.println(e.getMessage());
-
-
         } finally {
-
             try {
                 if (fos != null) {
                     fos.close();
@@ -102,27 +178,33 @@ public class Camping implements InCamping{
         }
     }
 
+    /**
+     * Carrega un camping des d'un fitxer
+     * @param camiOrigen Ruta del fitxer a carregar
+     * @return Instància de Camping carregada
+     * @throws ExcepcioCamping Si hi ha errors en el procés de càrrega
+     */
     public static Camping load(String camiOrigen) throws ExcepcioCamping {
-            try {
-                FileInputStream fin = new FileInputStream(camiOrigen);
-                ObjectInputStream ois = new ObjectInputStream(fin);
-                Camping campingCarregat = (Camping) ois.readObject();
-                ois.close();
-                fin.close();
-                return campingCarregat;
-
-            }
-            catch (FileNotFoundException e) {
-                throw new ExcepcioCamping("No s'ha trobat l'arxiu: "+e.getMessage());
-            }
-            catch (IOException e) {
-                throw new ExcepcioCamping("Error al carregar l'arxiu: "+e.getMessage());
-            }
-            catch (ClassNotFoundException e){
-                throw new ExcepcioCamping("No s'ha pogut fer càsting de les dades camping: "+e.getMessage());
-            }
+        try {
+            FileInputStream fin = new FileInputStream(camiOrigen);
+            ObjectInputStream ois = new ObjectInputStream(fin);
+            Camping campingCarregat = (Camping) ois.readObject();
+            ois.close();
+            fin.close();
+            return campingCarregat;
+        } catch (FileNotFoundException e) {
+            throw new ExcepcioCamping("No s'ha trobat l'arxiu: "+e.getMessage());
+        } catch (IOException e) {
+            throw new ExcepcioCamping("Error al carregar l'arxiu: "+e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new ExcepcioCamping("No s'ha pogut fer càsting de les dades camping: "+e.getMessage());
+        }
     }
 
+    /**
+     * Inicialitza les dades del camping amb valors per defecte
+     * Crea accessos i allotjaments de prova
+     */
     public void inicialitzaDadesCamping() {
         llistaAccessos.buidar();
 
