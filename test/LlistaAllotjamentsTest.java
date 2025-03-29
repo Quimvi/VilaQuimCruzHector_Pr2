@@ -1,8 +1,8 @@
-package prog2.model;
-
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import prog2.model.Allotjament;
+import prog2.model.LlistaAllotjaments;
 import prog2.vista.ExcepcioCamping;
 
 public class LlistaAllotjamentsTest {

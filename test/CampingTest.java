@@ -1,11 +1,11 @@
-package prog2.model;
-
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import prog2.model.Acces;
+import prog2.model.Allotjament;
+import prog2.model.Camping;
 import prog2.vista.ExcepcioCamping;
 import java.io.*;
-import java.util.ArrayList;
 
 public class CampingTest {
 

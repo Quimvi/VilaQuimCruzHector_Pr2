@@ -1,8 +1,7 @@
-package prog2.model;
-
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import prog2.model.*;
 import prog2.vista.ExcepcioCamping;
 
 public class LlistaAccessosTest {
