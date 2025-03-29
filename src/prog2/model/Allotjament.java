@@ -126,7 +126,7 @@ public class Allotjament implements InAllotjament{
     /**
      * Determina la temporada (ALTA o BAIXA) segons la data
      * Temporada alta: del 21 de març al 20 de setembre
-     * Temporada baixa: de la resta de l'any
+     * Temporada baixa: la resta de l'any
      * @param data Data a verificar
      * @return Temp (ALTA o BAIXA)
      */
@@ -135,7 +135,7 @@ public class Allotjament implements InAllotjament{
         LocalDate date1 = LocalDate.of(data.getYear(),3,21);  // 21 de març
         LocalDate date2 = LocalDate.of(data.getYear(),9,20);   // 20 de setembre
 
-        if (date1.isBefore(data) && date2.isAfter(data))
+        if ((date1.isBefore(data) || date1.isEqual(data)) && (date2.isAfter(data) || date2.isEqual(data)))
             temporada = Temp.ALTA;
         else
             temporada = Temp.BAIXA;

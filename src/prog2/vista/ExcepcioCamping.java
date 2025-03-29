@@ -11,6 +11,6 @@ public class ExcepcioCamping extends RuntimeException {
      * @param message Missatge descriptiu de l'error
      */
     public ExcepcioCamping(String message) {
-        super(message);  // Crida al constructor de la classe pare (RuntimeException)
+        System.out.println(message);
     }
 }

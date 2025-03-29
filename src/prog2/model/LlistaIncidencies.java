@@ -12,7 +12,7 @@ import java.util.Objects;
 public class LlistaIncidencies implements InLlistaIncidencies {
 
     // Llista estàtica que emmagatzema totes les incidències
-    private static ArrayList<Incidencia> incidencies;
+    public static ArrayList<Incidencia> incidencies;
 
     /**
      * Constructor que inicialitza la llista d'incidències
@@ -40,7 +40,7 @@ public class LlistaIncidencies implements InLlistaIncidencies {
                 allotjament.tancarAllotjament(incidencia);
                 incidencies.add(incidencia);
             } else {
-                throw new ExcepcioCamping("L'allotjament :" + incidencia.getAllotjament().getNom() + " ja té una incidència");
+                throw new ExcepcioCamping("L'allotjament: " + incidencia.getAllotjament().getNom() + " ja té una incidència");
             }
         } else {
             throw new ExcepcioCamping("Aquest tipus d'incidència no existeix");
