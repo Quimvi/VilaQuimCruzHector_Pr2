@@ -1,9 +1,10 @@
-package prog2.model;
-
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import java.time.LocalDate;
+
+import prog2.model.Allotjament;
+import prog2.model.Incidencia;
 import prog2.model.Incidencia.TipusIncidencia;
 
 public class AllotjamentTest {

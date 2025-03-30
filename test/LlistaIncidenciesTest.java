@@ -1,8 +1,9 @@
-package prog2.model;
-
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import prog2.model.Allotjament;
+import prog2.model.Incidencia;
+import prog2.model.LlistaIncidencies;
 import prog2.vista.ExcepcioCamping;
 
 import java.util.ArrayList;
