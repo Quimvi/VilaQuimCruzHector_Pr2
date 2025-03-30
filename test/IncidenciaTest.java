@@ -56,8 +56,7 @@ public class IncidenciaTest {
 
     @Test
     public void testToString() {
-        String expected = "Número d'incidència: 1, Allotjament: Nom=Habitació Doble, Id=A1, estat allotjament: true, estat electric: 100%, estada mínima en temp ALTA: 3, estada mínima en temp BAIXA: 1.\n"
-                + ", Data: 2023-06-15, Tipus: Reparacio\n";
+        String expected = "Número d'incidència: 1, Allotjament: A1, Data: 2023-06-15, Tipus: Reparacio\n";
         assertEquals(expected, incidencia.toString());
     }
 

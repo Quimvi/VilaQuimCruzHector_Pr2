@@ -1,6 +1,8 @@
 package prog2.model;
 
 import prog2.vista.ExcepcioCamping;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -8,7 +10,7 @@ import java.util.Iterator;
  * Classe que gestiona una llista d'allotjaments del camping, implementant la interfície InLlistaAllotjaments.
  * Permet afegir, eliminar, buscar i llistar els allotjaments del camping.
  */
-public class LlistaAllotjaments implements InLlistaAllotjaments {
+public class LlistaAllotjaments implements InLlistaAllotjaments, Serializable {
 
     // Llista interna per emmagatzemar els allotjaments
     private final ArrayList<Allotjament> allotjaments;

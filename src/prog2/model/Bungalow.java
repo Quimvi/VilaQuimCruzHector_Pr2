@@ -119,12 +119,8 @@ public class Bungalow extends Casa {
      * @return String amb tots els detalls del bungalow
      */
     public String toString() {
-        return "Nom = " + this.nom_ + ", Id = " + this.idAllotjament + ", Mida = " + this.mida
-                + ", Habitacions = " + this.habitacions + ", placesPersones = " + this.placesPersones
-                + ", placesParquing = " + this.placesParquing + ", Terrassa = " + this.terrassa
-                + ", tv = " + this.tv + ", aireFred = " + this.aireFred
-                + ", estat allotjament: " + getEstatAllotjament() + ", estat electric: " + getElectricitat()
-                + ", estada mínima en temp ALTA = " + this.estadaMinimaALTA_
-                + ", estada mínima en temp BAIXA = " + this.estadaMinimaBAIXA_;
+        return super.toString() + ", PlacesParquing = " + this.placesParquing + ", Terrassa = " + this.terrassa
+                + ", Tv = " + this.tv + ", AireFred = " + this.aireFred + ".\n";
+
     }
 }

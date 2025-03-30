@@ -98,7 +98,7 @@ public class Incidencia {
      */
     public String toString() {
         return "Número d'incidència: " + getNumIncidencia()
-                + ", Allotjament: " + getAllotjament()
+                + ", Allotjament: " + getAllotjament().getId()
                 + ", Data: " + getData()
                 + ", Tipus: " + getTipusIncidencia() + "\n";
     }

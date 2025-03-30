@@ -74,10 +74,8 @@ public class Parcela extends Allotjament {
      * @return String amb tota la informació de la parcel·la
      */
     public String toString() {
-        return "Nom=" + this.nom_ + ", Id=" + this.idAllotjament
-                + ", estat allotjament: " + getEstatAllotjament()
-                + ", estat electric: " + getElectricitat()
-                + ", estada mínima en temp ALTA: " + this.estadaMinimaALTA_
-                + ", estada mínima en temp BAIXA: " + this.estadaMinimaBAIXA_ + ".";
+        return super.toString() + ", Mida:" + this.idAllotjament
+                + ", Connexió electrica: " + isConnexioElectrica() + ". \n";
+
     }
 }

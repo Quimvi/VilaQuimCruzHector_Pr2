@@ -177,7 +177,7 @@ public class VistaCamping {
                     System.out.println("Ruta del fitxer de origen? ");
                     camiOrigen = sc.next();
 
-                    Camping.load(camiOrigen);
+                    campingGreen = Camping.load(camiOrigen);
                     break;
 
                 case SORTIR:

@@ -87,6 +87,7 @@ public class Camping implements InCamping, Serializable {
      */
     public String llistarAccessos(String infoEstat) throws ExcepcioCamping {
         boolean estat;
+
         if (infoEstat.equals("Obert")) {
             estat = true;
         } else if (infoEstat.equals("Tancat")) {

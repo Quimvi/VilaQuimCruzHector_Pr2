@@ -1,5 +1,6 @@
 package prog2.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -7,7 +8,7 @@ import java.util.Objects;
  * Classe que representa un allotjament en un sistema de gestió turística.
  * Implementa la interfície InAllotjament.
  */
-public class Allotjament implements InAllotjament{
+public class Allotjament implements InAllotjament, Serializable {
 
     // Atributs de la classe
     protected String nom_;                  // Nom de l'allotjament
@@ -32,7 +33,7 @@ public class Allotjament implements InAllotjament{
         setEstatAllotjament(estatAllotjament);
         setElectricitat(estatIluminacio);
         setEstadaMinima(estadaMinimaALTA_, estadaMinimaBAIXA_);
-        obrirAllotjament(); // Obre l'allotjament per defecte
+
     }
 
     // Mètodes Getters i Setters
@@ -165,7 +166,7 @@ public class Allotjament implements InAllotjament{
      * @return String amb tota la informació de l'allotjament
      */
     public String toString() {
-        return "Nom=" + this.nom_ + ", Id=" + this.idAllotjament + ", estat allotjament: " + getEstatAllotjament() + ", estat electric: " + getElectricitat()
-                + ", estada mínima en temp ALTA: " + this.estadaMinimaALTA_ + ", estada mínima en temp BAIXA: " + this.estadaMinimaBAIXA_ + "." + "\n";
+        return "*  Nom: " + this.nom_ + ", Id: " + this.idAllotjament + ", Estat allotjament: " + getEstatAllotjament() + ", Estat electric: " + getElectricitat()
+                + ", Estada mínima en temp ALTA: " + this.estadaMinimaALTA_ + ", Estada mínima en temp BAIXA: " + this.estadaMinimaBAIXA_ ;
     }
 }

@@ -18,6 +18,7 @@ public class LlistaAllotjamentsTest {
         allotjament1 = new Allotjament("Habitació Doble", "ALL1", true, "100%", 3, 1);
         allotjament2 = new Allotjament("Habitació Individual", "ALL2", false, "50%", 2, 1);
         allotjament3 = new Allotjament("Suite", "ALL3", true, "100%", 4, 2);
+
     }
 
     @Test
@@ -57,21 +58,17 @@ public class LlistaAllotjamentsTest {
 
         // Test llistar tots
         String tots = llista.llistarAllotjaments("Tots");
-        assertTrue(tots.contains("Habitació Doble"));
-        assertTrue(tots.contains("Habitació Individual"));
-        assertTrue(tots.contains("Suite"));
+        System.out.println(tots);
+        assertTrue(tots.equals("*  Nom: Habitació Doble, Id: ALL1, Estat allotjament: true, Estat electric: 100%, Estada mínima en temp ALTA: 3, Estada mínima en temp BAIXA: 1*  Nom: Habitació Individual, Id: ALL2, Estat allotjament: false, Estat electric: 50%, Estada mínima en temp ALTA: 2, Estada mínima en temp BAIXA: 1*  Nom: Suite, Id: ALL3, Estat allotjament: true, Estat electric: 100%, Estada mínima en temp ALTA: 4, Estada mínima en temp BAIXA: 2"));
+
 
         // Test llistar operatius
         String operatius = llista.llistarAllotjaments("Operatiu");
-        assertTrue(operatius.contains("Habitació Doble"));
-        assertTrue(operatius.contains("Suite"));
-        assertFalse(operatius.contains("Habitació Individual"));
+        assertTrue(operatius.equals("*  Nom: Habitació Doble, Id: ALL1, Estat allotjament: true, Estat electric: 100%, Estada mínima en temp ALTA: 3, Estada mínima en temp BAIXA: 1*  Nom: Suite, Id: ALL3, Estat allotjament: true, Estat electric: 100%, Estada mínima en temp ALTA: 4, Estada mínima en temp BAIXA: 2"));
 
         // Test llistar no operatius
         String noOperatius = llista.llistarAllotjaments("No operatiu");
-        assertTrue(noOperatius.contains("Habitació Individual"));
-        assertFalse(noOperatius.contains("Habitació Doble"));
-        assertFalse(noOperatius.contains("Suite"));
+        assertTrue(noOperatius.equals("*  Nom: Habitació Individual, Id: ALL2, Estat allotjament: false, Estat electric: 50%, Estada mínima en temp ALTA: 2, Estada mínima en temp BAIXA: 1"));
     }
 
     @Test(expected = ExcepcioCamping.class)

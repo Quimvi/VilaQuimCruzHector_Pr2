@@ -99,12 +99,7 @@ public class Casa extends Allotjament {
      * @return String amb tota la informació de la casa
      */
     public String toString() {
-        return "Nom = " + this.nom_ + ", Id = " + this.idAllotjament
-                + ", Mida = " + this.mida + ", Habitacions = " + this.habitacions
-                + ", placesPersones = " + this.placesPersones
-                + ", estat allotjament: " + getEstatAllotjament()
-                + ", estat electric: " + getElectricitat()
-                + ", estada mínima en temp ALTA = " + this.estadaMinimaALTA_
-                + ", estada mínima en temp BAIXA = " + this.estadaMinimaBAIXA_;
+        return super.toString() + ", Mida = " + this.mida + ", Habitacions = " + this.habitacions
+                + ", PlacesPersones = " + this.placesPersones;
     }
 }

@@ -34,6 +34,6 @@ public class CamiAsfaltat extends AccesAsfalt {
      */
     @Override
     public String toString() {
-        return "Camí asfaltat => " + super.toString();  // Afegeix prefix i crida al toString() del pare
+        return "Camí asfaltat => " + super.toString() + "\n";  // Afegeix prefix i crida al toString() del pare
     }
 }

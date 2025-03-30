@@ -1,9 +1,10 @@
 package prog2.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public abstract class Acces implements InAcces {
+public abstract class Acces implements InAcces, Serializable {
     // Atributs de classe
     protected String nom; // Nom de l'accés
     protected boolean accessibilitat; // true: accessible per cotxe i a peu, false: només a peu
@@ -67,5 +68,17 @@ public abstract class Acces implements InAcces {
 
     public boolean isAccessibilitat() {
         return getAccessibilitat(); // Mètode redundant que consulta l'accessibilitat
+    }
+
+
+    public String toString() {
+        String cotxe;
+        if (this.accessibilitat){
+            cotxe = "Acc";
+        }else{
+            cotxe = "noAcc";
+        }
+        return "*  Nom =" + this.nom + ", Accessibilitat: " + cotxe + ", Estat acces: " + getEstat();
+
     }
 }

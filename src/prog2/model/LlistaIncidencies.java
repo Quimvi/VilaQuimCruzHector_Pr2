@@ -1,6 +1,8 @@
 package prog2.model;
 
 import prog2.vista.ExcepcioCamping;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
@@ -9,7 +11,7 @@ import java.util.Objects;
  * Classe que gestiona una llista d'incidències del camping, implementant la interfície InLlistaIncidencies.
  * Permet afegir, eliminar i consultar incidències dels allotjaments.
  */
-public class LlistaIncidencies implements InLlistaIncidencies {
+public class LlistaIncidencies implements InLlistaIncidencies, Serializable {
 
     // Llista estàtica que emmagatzema totes les incidències
     public static ArrayList<Incidencia> incidencies;

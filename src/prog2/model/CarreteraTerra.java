@@ -57,6 +57,6 @@ public class CarreteraTerra extends AccesTerra {
      */
     @Override
     public String toString() {
-        return "Carretera de terra => " + super.toString();
+        return "Carretera de terra => " + super.toString() + "\n";
     }
 }

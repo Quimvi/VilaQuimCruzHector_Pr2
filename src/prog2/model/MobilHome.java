@@ -61,13 +61,7 @@ public class MobilHome extends Casa {
      * @return String amb tota la informació del MobilHome
      */
     public String toString() {
-        return "Nom = " + this.nom_ + ", Id = " + this.idAllotjament
-                + ", Mida = " + this.mida + ", Habitacions = " + this.habitacions
-                + ", placesPersones = " + this.placesPersones
-                + ", terrassaBarbacoa = " + this.terrassaBarbacoa
-                + ", estat allotjament: " + getEstatAllotjament()
-                + ", estat electric: " + getElectricitat()
-                + ", estada mínima en temp ALTA = " + this.estadaMinimaALTA_
-                + ", estada mínima en temp BAIXA = " + this.estadaMinimaBAIXA_;
+        return super.toString() + ", TerrassaBarbacoa = " + this.terrassaBarbacoa + ".\n";
+
     }
 }

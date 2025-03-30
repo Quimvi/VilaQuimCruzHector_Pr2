@@ -1,6 +1,8 @@
 package prog2.model;
 
 import prog2.vista.ExcepcioCamping;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -8,7 +10,7 @@ import java.util.Iterator;
  * Classe que gestiona una llista d'accessos al camping, implementant la interfície InLlistaAccessos.
  * Permet afegir, llistar i gestionar els accessos del camping.
  */
-public class LlistaAccessos implements InLlistaAccessos {
+public class LlistaAccessos implements InLlistaAccessos, Serializable {
 
     // Llista interna per emmagatzemar els accessos
     private final ArrayList<Acces> accessos;
@@ -20,11 +22,17 @@ public class LlistaAccessos implements InLlistaAccessos {
         this.accessos = new ArrayList<Acces>();
     }
 
+
+    public ArrayList<Acces> getAccessos() {
+        return accessos;
+    }
+
     /**
      * Afegeix un nou accés a la llista
      * @param acc Accés a afegir
      * @throws ExcepcioCamping Si l'accés ja existeix
      */
+
     public void afegirAcces(Acces acc) throws ExcepcioCamping {
         // Verifica que no existeixi un accés amb el mateix nom
         Iterator<Acces> itrAcces = this.accessos.iterator();
@@ -51,7 +59,7 @@ public class LlistaAccessos implements InLlistaAccessos {
         Iterator<Acces> itrAcces = this.accessos.iterator();
         while (itrAcces.hasNext()) {
             Acces accesllista = itrAcces.next();
-            if (estat && accesllista.getEstat()) {
+            if (estat && accesllista.getEstat() ) {
                 concatenacioInfo.append(accesllista.toString());
                 trobat = true;
             } else if (!estat && !accesllista.getEstat()) {
@@ -95,7 +103,7 @@ public class LlistaAccessos implements InLlistaAccessos {
 
         while (itrAcces.hasNext()) {
             Acces accesllista = itrAcces.next();
-            if (accesllista.getLlistaAllotjament().containsAllotjamentOperatiu()) {
+            if (accesllista.getEstat()) {
                 resultat++;
             }
         }

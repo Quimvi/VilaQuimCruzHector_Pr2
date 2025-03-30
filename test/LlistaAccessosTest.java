@@ -34,10 +34,10 @@ public class LlistaAccessosTest {
     @Test
     public void testAfegirAcces() throws ExcepcioCamping {
         llistaAccessos.afegirAcces(acces1);
-        assertEquals(1, llistaAccessos.calculaAccessosAccessibles());
+        assertEquals(1, llistaAccessos.getAccessos().size());
 
         llistaAccessos.afegirAcces(acces2);
-        assertEquals(2, llistaAccessos.calculaAccessosAccessibles());
+        assertEquals(2, llistaAccessos.getAccessos().size());
     }
 
     @Test(expected = ExcepcioCamping.class)
@@ -121,9 +121,9 @@ public class LlistaAccessosTest {
     public void testBuidar() throws ExcepcioCamping {
         llistaAccessos.afegirAcces(acces1);
         llistaAccessos.afegirAcces(acces2);
-        assertEquals(2, llistaAccessos.calculaAccessosAccessibles());
+        assertEquals(2, llistaAccessos.getAccessos().size());
 
         llistaAccessos.buidar();
-        assertEquals(0, llistaAccessos.calculaAccessosAccessibles());
+        assertEquals(0, llistaAccessos.getAccessos().size());
     }
 }

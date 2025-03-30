@@ -132,8 +132,7 @@ public class AllotjamentTest {
 
     @Test
     public void testToString() {
-        String expected = "Nom=Habitació Doble, Id=A1, estat allotjament: true, estat electric: 100%, " +
-                "estada mínima en temp ALTA: 3, estada mínima en temp BAIXA: 1.\n";
+        String expected = "*  Nom: Habitació Doble, Id: A1, Estat allotjament: true, Estat electric: 100%, Estada mínima en temp ALTA: 3, Estada mínima en temp BAIXA: 1";
         assertEquals(expected, allotjament.toString());
     }
 

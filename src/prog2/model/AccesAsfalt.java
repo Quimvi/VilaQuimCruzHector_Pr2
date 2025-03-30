@@ -55,11 +55,12 @@ public abstract class AccesAsfalt extends Acces {
      * Representació textual de l'accés asfaltat
      * @return String amb la informació formatejada
      */
+    @Override
     public String toString() {
         if (isAccessibilitat()) {  // Si permet vehicles
             return super.toString() + ", Metres quadrats: " + getM2() + ", Pes màxim: " + getKg();
         } else {  // Si només permet vianants
-            return super.toString() + ", Metres quadrats: " + getM2();
+            return super.toString() + ", Metres quadrats: " + getM2() ;
         }
     }
 }

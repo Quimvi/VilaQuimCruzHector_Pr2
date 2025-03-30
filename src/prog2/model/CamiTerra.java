@@ -36,6 +36,6 @@ public class CamiTerra extends AccesTerra {
      */
     @Override
     public String toString() {
-        return "Camí Terra => " + super.toString();
+        return "Camí Terra => " + super.toString() + "\n";
     }
 }
